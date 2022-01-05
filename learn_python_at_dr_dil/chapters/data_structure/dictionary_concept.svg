@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="208.22537mm"
+   height="129.45102mm"
+   viewBox="0 0 208.22538 129.45102"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   sodipodi:docname="dictionary_concept.svg"
+   inkscape:export-filename="/home/cuyghur/gdrive/python_book/learn_python/learn_python/chapters/data_structure/dictionary_concept.png"
+   inkscape:export-xdpi="60"
+   inkscape:export-ydpi="60"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1"
+     inkscape:cx="352.5"
+     inkscape:cy="173"
+     inkscape:window-width="1853"
+     inkscape:window-height="1025"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid35695"
+       originx="-18.353085"
+       originy="23.736198" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path36671" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path36671-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path36671-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path36671-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path36671-27" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-18.353082,23.736202)">
+    <text
+       xml:space="preserve"
+       style="font-size:20px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="64.038368"
+       y="33.019932"
+       id="text2473"><tspan
+         sodipodi:role="line"
+         id="tspan2471"
+         style="stroke-width:0.264583"
+         x="64.038368"
+         y="33.019932">p   <tspan
+   style="fill:#428639;fill-opacity:1"
+   id="tspan39179">,</tspan>    b    <tspan
+   style="fill:#3e8639;fill-opacity:1"
+   id="tspan56353">,</tspan>    e</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="44.194458"
+       y="81.922302"
+       id="text5705"><tspan
+         sodipodi:role="line"
+         id="tspan5703"
+         style="stroke-width:0.264583"
+         x="44.194458"
+         y="81.922302">paqa <tspan
+   style="fill:#3e8639;fill-opacity:1"
+   id="tspan58621">,</tspan> béliq <tspan
+   style="fill:#3e8639;fill-opacity:1"
+   id="tspan60137">,</tspan> eynek</tspan></text>
+    <path
+       style="fill:none;stroke:#ff000d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="M 68.791666,40.216666 V 61.383333"
+       id="path35765"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ff000d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Mend-6)"
+       d="M 124.60105,40.217 V 61.383667"
+       id="path35765-9"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ff000d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 2;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Mend-1)"
+       d="M 186.7732,40.217 V 61.383667"
+       id="path35765-0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;fill:#0c2c78;fill-opacity:1;stroke-width:0.264583"
+       x="17.653082"
+       y="51.32309"
+       id="text96090"><tspan
+         sodipodi:role="line"
+         id="tspan96088"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';fill:#ff6f00;fill-opacity:1;stroke-width:0.264583"
+         x="17.653082"
+         y="51.32309"><tspan
+   style="fill:#000000;fill-opacity:1"
+   id="tspan278482">'p'</tspan> <tspan
+   style="fill:#ff000d;fill-opacity:1"
+   id="tspan352227">:</tspan> <tspan
+   style="fill:#000000;fill-opacity:1"
+   id="tspan280864">'paqa'</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#ff6f00;stroke-width:0.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 55.050538,48.583914 66.347693,47.153172"
+       id="path103700" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.06, 1.06;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 68.791666,20.108332 V 12.170833 H 185.20833 v 7.937499"
+       id="path104408" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 68.791666,87.338334 v 7.937499 H 185.20833 v -7.937499"
+       id="path104408-5" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="91.864288"
+       y="8.2550211"
+       id="text132559"><tspan
+         sodipodi:role="line"
+         id="tspan132557"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';stroke-width:0.264583"
+         x="91.864288"
+         y="8.2550211">keys (körsetküch)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="112.603"
+       y="105.58482"
+       id="text179283"><tspan
+         sodipodi:role="line"
+         id="tspan179281"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';stroke-width:0.264583"
+         x="112.603"
+         y="105.58482">values</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:15px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="24.484379"
+       y="-11.991202"
+       id="text257235"><tspan
+         sodipodi:role="line"
+         id="tspan257233"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';stroke-width:0.264583"
+         x="24.484379"
+         y="-11.991202"><tspan
+   style="font-size:15px;fill:#428639;fill-opacity:1"
+   id="tspan380146">{</tspan>'p' <tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';fill:#ff000d;fill-opacity:1"
+   id="tspan287972">: </tspan>'paqa' <tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';fill:#428639;fill-opacity:1"
+   id="tspan268238">,</tspan>  'b' <tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';fill:#ff000d;fill-opacity:1"
+   id="tspan296360">: </tspan>'béliq' <tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';fill:#428639;fill-opacity:1"
+   id="tspan269754">,</tspan> 'e' <tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';fill:#ff000d;fill-opacity:1"
+   id="tspan298586">: </tspan>'eynek'<tspan
+   style="font-size:15px;fill:#428639;fill-opacity:1"
+   id="tspan382464">}</tspan></tspan></text>
+  </g>
+</svg>
