@@ -1,0 +1,1111 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionary</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Learn Python @ Dr. Dil" href="../../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Learn Python @ Dr. Dil
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dictionary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/data_structure/dictionary.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/dyusuf/learn_python_at_Dr_Dil"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/dyusuf/learn_python_at_Dr_Dil/issues/new?title=Issue%20on%20page%20%2Fchapters/data_structure/dictionary.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dyusuf/learn_python_at_Dr_Dil/main?urlpath=tree/docs/chapters/data_structure/dictionary.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-problem">
+   A problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-solution-create-a-dictionary">
+   The solution: create a dictionary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-dictionary-with">
+     Create dictionary with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {}
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-dictionary-with-dict">
+     Creating dictionary with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dict()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-a-dictionary">
+   Access a dictionary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-the-value-of-an-item">
+     Get the value of an item
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-all-keys">
+     Get all keys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-all-values">
+     Get all values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-all-items">
+     Get all items
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-a-dictionary">
+   Properties of a dictionary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keys-must-be-unique">
+     Keys must be unique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-type-restrction-on-key-value-pairs">
+     Data type restrction on key:value pairs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries-are-mutable">
+   Dictionaries are mutable
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#change-values">
+     Change values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-items">
+     Add items
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-items">
+     Remove items
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aliasing-and-copying">
+     Aliasing and copying
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-dictionary-operations">
+   Other dictionary operations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dictionary</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-problem">
+   A problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-solution-create-a-dictionary">
+   The solution: create a dictionary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-dictionary-with">
+     Create dictionary with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {}
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-dictionary-with-dict">
+     Creating dictionary with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dict()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-a-dictionary">
+   Access a dictionary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-the-value-of-an-item">
+     Get the value of an item
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-all-keys">
+     Get all keys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-all-values">
+     Get all values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-all-items">
+     Get all items
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-a-dictionary">
+   Properties of a dictionary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keys-must-be-unique">
+     Keys must be unique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-type-restrction-on-key-value-pairs">
+     Data type restrction on key:value pairs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries-are-mutable">
+   Dictionaries are mutable
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#change-values">
+     Change values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-items">
+     Add items
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-items">
+     Remove items
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aliasing-and-copying">
+     Aliasing and copying
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-dictionary-operations">
+   Other dictionary operations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="dictionary">
+<h1>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-problem">
+<h2>A problem<a class="headerlink" href="#a-problem" title="Permalink to this headline">¶</a></h2>
+<p>How to find a Uyghur word which cotains a specific Uyghur <a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/0/0c/UEY_ULY_Elipbesi_Kichik.jpg?1641220049679">letter</a>?</p>
+<p>To solve this problem, we may first breake the problem into the following smaller sub-problems:</p>
+<ul class="simple">
+<li><p>sub-problem 1: how to associate the letters and the corresponding words?</p></li>
+<li><p>sub-problem 2: how to find the correspodning word by specifying a letter?</p></li>
+</ul>
+</div>
+<div class="section" id="the-solution-create-a-dictionary">
+<h2>The solution: create a dictionary<a class="headerlink" href="#the-solution-create-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<p>A dictionary data structure is used to associate two collections of data values. One collection is used as indexes (known as keys) and another is the corresponding values. The association is represented as <strong>key:value pairs</strong>, and each key is used as the index to access the corresponding value. Therefore you can create a dicitonary to solve the above problems.</p>
+<p><img alt="" src="../../_images/dictionary_concept.png" /></p>
+<div class="section" id="create-dictionary-with">
+<h3>Create dictionary with <code class="docutils literal notranslate"><span class="pre">{}</span></code><a class="headerlink" href="#create-dictionary-with" title="Permalink to this headline">¶</a></h3>
+<p>To solve sub-problem 1, you can associate the Uyghur letters and the corresponding Uyghur words by creating a dictionary where the letters and words are key:value pairs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to solve sub-problem 1</span>
+<span class="c1"># create a dictionary</span>
+<span class="c1"># place a comma-separated collection of key:value pairs in curly brackets {}</span>
+<span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="s1">&#39;eynek&#39;</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">),</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;dict&#39;&gt; {&#39;p&#39;: &#39;paqa&#39;, &#39;b&#39;: &#39;béliq&#39;, &#39;e&#39;: &#39;eynek&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>To solve sub-problem 2, you can access a letter’s corresponding word by using the letter as the key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to solve sub-problem 2</span>
+<span class="c1"># to search a word assocaited with &#39;p&#39;, simply place &#39;p&#39; as the key in square brackets []</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>paqa
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-dictionary-with-dict">
+<h3>Creating dictionary with <code class="docutils literal notranslate"><span class="pre">dict()</span></code><a class="headerlink" href="#creating-dictionary-with-dict" title="Permalink to this headline">¶</a></h3>
+<p>You can convert a collection of two-item sequences into a dictionary with <code class="docutils literal notranslate"><span class="pre">dict()</span></code>. The first item in each sequence is used as the key and the second as the value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a dictionary with a list of two-item tuples</span>
+<span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="s1">&#39;paqa&#39;</span><span class="p">),</span>
+                  <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;béliq&#39;</span><span class="p">),</span>
+                  <span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;eynek&#39;</span><span class="p">)]</span>
+
+<span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;p&#39;: &#39;paqa&#39;, &#39;b&#39;: &#39;béliq&#39;, &#39;e&#39;: &#39;eynek&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>To create a dictionary from two sequences, you can combine the <code class="docutils literal notranslate"><span class="pre">dict()</span></code> and <code class="docutils literal notranslate"><span class="pre">zip()</span></code> methods. The first sequence will be keys for the dictionary, and the second sequence will be the values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a dictionary with two lists</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">]</span>
+
+<span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;p&#39;: &#39;paqa&#39;, &#39;b&#39;: &#39;béliq&#39;, &#39;e&#39;: &#39;eynek&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="access-a-dictionary">
+<h2>Access a dictionary<a class="headerlink" href="#access-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-the-value-of-an-item">
+<h3>Get the value of an item<a class="headerlink" href="#get-the-value-of-an-item" title="Permalink to this headline">¶</a></h3>
+<p>You can not access a dictionary based on a sequence of index numbers. Instead, as shown earlier, you use the keys as indexes to access the corresponding values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="s1">&#39;eynek&#39;</span><span class="p">}</span>
+
+<span class="c1"># access a value by specifying its key in square brackets []</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>béliq
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you use a key that is not in the dictionary, you’ll get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="s1">&#39;eynek&#39;</span><span class="p">}</span>
+
+<span class="c1"># use non-existent keys</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">[</span><span class="s1">&#39;ö&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1651</span><span class="o">/</span><span class="mf">2183459671.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># use non-existent keys</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">[</span><span class="s1">&#39;ö&#39;</span><span class="p">])</span>
+
+<span class="ne">KeyError</span>: &#39;ö&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>To avoid such <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>, you can use the dictionary <code class="docutils literal notranslate"><span class="pre">get()</span></code> method.
+This method returns the value for key if key is in the dictionary, else <code class="docutils literal notranslate"><span class="pre">None</span></code>, so that this method never raises a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the value for existent keys</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>paqa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the default value for non-existent keys</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ö&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="get-all-keys">
+<h3>Get all keys<a class="headerlink" href="#get-all-keys" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">keys()</span></code> method will return a collection of all the keys in the dictionary. The items in the resulting <code class="docutils literal notranslate"><span class="pre">dict_keys</span></code> object are not accessible by index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="s1">&#39;eynek&#39;</span><span class="p">}</span>
+
+<span class="n">all_keys</span> <span class="o">=</span> <span class="n">Uyghur_letters</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">all_keys</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;p&#39;, &#39;b&#39;, &#39;e&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dict_keys is not subscriptable</span>
+<span class="n">all_keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_16574</span><span class="o">/</span><span class="mf">1381297298.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># dict_keys is not subscriptable</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">all_keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">TypeError</span>: &#39;dict_keys&#39; object is not subscriptable
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert dict_keys to list</span>
+<span class="n">keys_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">all_keys</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">keys_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">keys_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;p&#39;, &#39;b&#39;, &#39;e&#39;]
+p
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="get-all-values">
+<h3>Get all values<a class="headerlink" href="#get-all-values" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">values()</span></code> method will return a collection of all the values in the dictionary. The items in the resulting <code class="docutils literal notranslate"><span class="pre">dict_values</span></code> object are not accessible by index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="s1">&#39;eynek&#39;</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;paqa&#39;, &#39;béliq&#39;, &#39;eynek&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="get-all-items">
+<h3>Get all items<a class="headerlink" href="#get-all-items" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">items()</span></code> method will return a collection of the key:value pairs in the dictionary. The items in the resulting <code class="docutils literal notranslate"><span class="pre">dict_items</span></code> object are not accessible by index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="s1">&#39;eynek&#39;</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;p&#39;, &#39;paqa&#39;), (&#39;b&#39;, &#39;béliq&#39;), (&#39;e&#39;, &#39;eynek&#39;)])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="properties-of-a-dictionary">
+<h2>Properties of a dictionary<a class="headerlink" href="#properties-of-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="keys-must-be-unique">
+<h3>Keys must be unique<a class="headerlink" href="#keys-must-be-unique" title="Permalink to this headline">¶</a></h3>
+<p>If you use duplicate keys when creating a dictionary, values of duplicate keys will overwrite existing values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># values of duplicate keys overwrite existing values</span>
+<span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;béliq&#39;</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;p&#39;: &#39;paqa&#39;, &#39;b&#39;: &#39;béliq&#39;, &#39;e&#39;: &#39;béliq&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-type-restrction-on-key-value-pairs">
+<h3>Data type restrction on key:value pairs<a class="headerlink" href="#data-type-restrction-on-key-value-pairs" title="Permalink to this headline">¶</a></h3>
+<p>The keys can be any immutable value, while the associated value can be of any type. Keys could be integers, strings, or tuples, but not lists, because lists are mutable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># keys could be integers, strings, or tuples</span>
+<span class="c1"># values can be of any type</span>
+<span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Dilmurat&#39;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: True, &#39;Dilmurat&#39;: 44, (2, 2): [2, 2]}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># keys could not be lists because lists are mutable</span>
+<span class="n">a_dict</span> <span class="o">=</span> <span class="p">{[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_16574</span><span class="o">/</span><span class="mf">965522184.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># keys could not be lists because lists are mutable</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">a_dict</span> <span class="o">=</span> <span class="p">{[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)}</span>
+
+<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionaries-are-mutable">
+<h2>Dictionaries are mutable<a class="headerlink" href="#dictionaries-are-mutable" title="Permalink to this headline">¶</a></h2>
+<p>Dictionaries are mutable, meaning that we can change, add, or remove items after the dictionary has been created.</p>
+<div class="section" id="change-values">
+<h3>Change values<a class="headerlink" href="#change-values" title="Permalink to this headline">¶</a></h3>
+<p>Updating dictionary items is easy. Just refer to the item by its key and assign a new value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="s1">&#39;eynek&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;before the change:&#39;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+
+<span class="n">Uyghur_letters</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;batur&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after the change:&quot;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before the change: {&#39;p&#39;: &#39;paqa&#39;, &#39;b&#39;: &#39;béliq&#39;, &#39;e&#39;: &#39;eynek&#39;}
+after the change: {&#39;p&#39;: &#39;paqa&#39;, &#39;b&#39;: &#39;batur&#39;, &#39;e&#39;: &#39;eynek&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-items">
+<h3>Add items<a class="headerlink" href="#add-items" title="Permalink to this headline">¶</a></h3>
+<p>Adding dictionary a new key and its value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an empty dictionary and add key:value pairs.</span>
+<span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">)</span>
+
+<span class="n">Uyghur_letters</span><span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;paqa&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">)</span>
+
+<span class="n">Uyghur_letters</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;béliq&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">)</span>
+
+<span class="n">Uyghur_letters</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;eynek&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
+{&#39;p&#39;: &#39;paqa&#39;}
+{&#39;p&#39;: &#39;paqa&#39;, &#39;b&#39;: &#39;béliq&#39;}
+{&#39;p&#39;: &#39;paqa&#39;, &#39;b&#39;: &#39;béliq&#39;, &#39;e&#39;: &#39;eynek&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can merge the items of one dictionary into another. Note that values of duplicate keys will overwrite existing values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;eynek&#39;</span><span class="p">}</span>
+<span class="n">new_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;pesh&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">}</span>
+
+<span class="c1"># merge the items of new_letters into Uyghur_letters</span>
+<span class="n">Uyghur_letters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_letters</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;after the merge:&#39;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>after the merge: {&#39;p&#39;: &#39;pesh&#39;, &#39;b&#39;: &#39;béliq&#39;, &#39;e&#39;: &#39;eynek&#39;, &#39;a&#39;: &#39;at&#39;, &#39;x&#39;: &#39;xoraz&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="remove-items">
+<h3>Remove items<a class="headerlink" href="#remove-items" title="Permalink to this headline">¶</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">pop()</span></code> remove the key and return its value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;pesh&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;before removal:&quot;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+
+<span class="c1"># Use pop() remove the key and return its value.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the value of the removed item:&quot;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after removal:&quot;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before removal: {&#39;p&#39;: &#39;pesh&#39;, &#39;b&#39;: &#39;béliq&#39;, &#39;e&#39;: &#39;eynek&#39;, &#39;a&#39;: &#39;at&#39;, &#39;x&#39;: &#39;xoraz&#39;}
+the value of the removed item: xoraz
+after removal: {&#39;p&#39;: &#39;pesh&#39;, &#39;b&#39;: &#39;béliq&#39;, &#39;e&#39;: &#39;eynek&#39;, &#39;a&#39;: &#39;at&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">del</span></code> remove the key without returning a value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;pesh&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;before removal:&quot;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+
+<span class="c1"># Use del remove the key without returning a value</span>
+<span class="k">del</span> <span class="n">Uyghur_letters</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after removal:&quot;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before removal: {&#39;p&#39;: &#39;pesh&#39;, &#39;b&#39;: &#39;béliq&#39;, &#39;e&#39;: &#39;eynek&#39;, &#39;a&#39;: &#39;at&#39;, &#39;x&#39;: &#39;xoraz&#39;}
+after removal: {&#39;p&#39;: &#39;pesh&#39;, &#39;b&#39;: &#39;béliq&#39;, &#39;e&#39;: &#39;eynek&#39;, &#39;a&#39;: &#39;at&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="aliasing-and-copying">
+<h3>Aliasing and copying<a class="headerlink" href="#aliasing-and-copying" title="Permalink to this headline">¶</a></h3>
+<p>As in the case of lists, because dictionaries are mutable, we need to be aware of aliasing. Whenever two variables refer to the same object, changes to one affect the other.
+If we want to modify a dictionary and keep a copy of the original, use <code class="docutils literal notranslate"><span class="pre">copy()</span></code>.</p>
+<p>Aliasing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;pesh&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;béliq&#39;</span><span class="p">}</span>
+
+<span class="c1"># Aliasing </span>
+<span class="n">alias</span> <span class="o">=</span> <span class="n">Uyghur_letters</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uyghur_letters&#39;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;alias:&#39;</span><span class="p">,</span> <span class="n">alias</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;alias and Uyghur_letters refer to the same object:&#39;</span><span class="p">,</span> <span class="n">alias</span> <span class="ow">is</span> <span class="n">Uyghur_letters</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># changes to alias affect Uyghur_letters</span>
+<span class="n">alias</span><span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Paqa&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;after a change to alias, alias:&#39;</span><span class="p">,</span> <span class="n">alias</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;after a change to alias, Uyghur_letters:&#39;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uyghur_letters {&#39;p&#39;: &#39;pesh&#39;, &#39;b&#39;: &#39;béliq&#39;}
+alias: {&#39;p&#39;: &#39;pesh&#39;, &#39;b&#39;: &#39;béliq&#39;}
+alias and Uyghur_letters refer to the same object: True
+
+after a change to alias, alias: {&#39;p&#39;: &#39;Paqa&#39;, &#39;b&#39;: &#39;béliq&#39;}
+after a change to alias, Uyghur_letters: {&#39;p&#39;: &#39;Paqa&#39;, &#39;b&#39;: &#39;béliq&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Copying:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;pesh&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;béliq&#39;</span><span class="p">}</span>
+
+<span class="c1"># copying</span>
+<span class="n">copy</span> <span class="o">=</span> <span class="n">Uyghur_letters</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uyghur_letters&#39;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;copy:&#39;</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;copy and Uyghur_letters refer to the same object:&#39;</span><span class="p">,</span> <span class="n">copy</span> <span class="ow">is</span> <span class="n">Uyghur_letters</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># changes to copy does not affect Uyghur_letters</span>
+<span class="n">copy</span><span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Paqa&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;after a change to copy, copy:&#39;</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;after a change to copy, Uyghur_letters:&#39;</span><span class="p">,</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uyghur_letters {&#39;p&#39;: &#39;pesh&#39;, &#39;b&#39;: &#39;béliq&#39;}
+copy: {&#39;p&#39;: &#39;pesh&#39;, &#39;b&#39;: &#39;béliq&#39;}
+copy and Uyghur_letters refer to the same object: False
+
+after a change to copy, copy: {&#39;p&#39;: &#39;Paqa&#39;, &#39;b&#39;: &#39;béliq&#39;}
+after a change to copy, Uyghur_letters: {&#39;p&#39;: &#39;pesh&#39;, &#39;b&#39;: &#39;béliq&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="other-dictionary-operations">
+<h2>Other dictionary operations<a class="headerlink" href="#other-dictionary-operations" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operators can test if a key or a value is in the dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;pesh&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;béliq&#39;</span><span class="p">}</span>
+
+<span class="c1"># check the presence of a key</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;p in Uyghur_letters:&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span> <span class="ow">in</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;p not in Uyghur_letters:&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Uyghur_letters</span><span class="p">)</span>
+
+<span class="c1"># check the presence of a value</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pesh in Uyghur_letters:&#39;</span><span class="p">,</span> <span class="s1">&#39;pesh&#39;</span> <span class="ow">in</span> <span class="n">Uyghur_letters</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pesh not in Uyghur_letters:&#39;</span><span class="p">,</span> <span class="s1">&#39;pesh&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Uyghur_letters</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p in Uyghur_letters: True
+p not in Uyghur_letters: False
+pesh in Uyghur_letters: True
+pesh not in Uyghur_letters: False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">len()</span></code> check the lengh of dictionary:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Uyghur_letters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;pesh&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;béliq&#39;</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lenght of Uyghur_letters:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">Uyghur_letters</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lenght of Uyghur_letters: 2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>create a dictionary of 32 Uyghur letters and their respective associated words</p></li>
+<li><p><em>Hemme adem tughulushidinla erkin, izzet-hörmet we hoquqta babbarawer bolup tughulghan. Ular eqilge we wijdan’gha ige hemde bir-birige qërindashliq munasiwitige xas roh bilen muamile qilishi kërek.</em></p>
+<ul class="simple">
+<li><p>what is the most frequent word (ignore case) in the above text? how many times does it appear?</p></li>
+<li><p>what is the longest word in in above text?  How many characters does it have?</p></li>
+</ul>
+</li>
+<li><p>concatenate following dictionaries to create a new one</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dic1</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="n">dic2</span><span class="o">=</span><span class="p">{</span><span class="mi">3</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">40</span><span class="p">}</span>
+<span class="n">dic3</span><span class="o">=</span><span class="p">{</span><span class="mi">5</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span><span class="mi">60</span><span class="p">}</span>
+<span class="n">Expected</span> <span class="n">Result</span> <span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">60</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>check whether a given key already exists in a dictionary</p></li>
+<li><p>generate and print a dictionary that contains a number (between 1 and 5) and its square</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">input</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">Expected</span> <span class="n">Output</span> <span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>multiply all the values in a dictionary</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;data1&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;data2&#39;</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;data3&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span>
+<span class="n">Expected</span> <span class="n">result</span><span class="p">:</span> <span class="o">-</span><span class="mi">600</span>
+</pre></div>
+</div>
+</li>
+<li><p>map two lists into a dictionary</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">]</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span><span class="s1">&#39;#008000&#39;</span><span class="p">,</span> <span class="s1">&#39;#0000FF&#39;</span><span class="p">]</span>
+
+<span class="n">Expected</span> <span class="n">output</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;red&#39;</span><span class="p">:</span> <span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">:</span> <span class="s1">&#39;#008000&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">:</span> <span class="s1">&#39;#0000FF&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>make a copy of a dictionary and change one item of the copy without affecting the original</p></li>
+<li><p>drop empty Items from a given dictionary</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Original</span> <span class="n">Dictionary</span><span class="p">:</span>
+<span class="p">{</span><span class="s1">&#39;c1&#39;</span><span class="p">:</span> <span class="s1">&#39;Red&#39;</span><span class="p">,</span> <span class="s1">&#39;c2&#39;</span><span class="p">:</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span> <span class="s1">&#39;c3&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+<span class="n">New</span> <span class="n">Dictionary</span> <span class="n">after</span> <span class="n">dropping</span> <span class="n">empty</span> <span class="n">items</span><span class="p">:</span>
+<span class="p">{</span><span class="s1">&#39;c1&#39;</span><span class="p">:</span> <span class="s1">&#39;Red&#39;</span><span class="p">,</span> <span class="s1">&#39;c2&#39;</span><span class="p">:</span> <span class="s1">&#39;Green&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/data_structure"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Learn Python &#64; Dr. Dil</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dilmurat Yusuf<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
