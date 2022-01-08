@@ -3,5 +3,9 @@
 
 format: jb-book
 root: index.ipynb
+  # start each section with the introduction of basic syntax
+  # dissect each problems
+  # end each chapter with a cheatsheet section
+  #
 chapters:
   - file: chapters/data_structure/dictionary.ipynb
