@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>len()</title>
+    <title>min() &amp; max()</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -139,7 +139,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/chapters/data_structure/generic_operations/len.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/chapters/data_structure/generic_operations/min_max.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -159,7 +159,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dyusuf/learn_python_at_Dr_Dil/issues/new?title=Issue%20on%20page%20%2Fchapters/data_structure/generic_operations/len.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dyusuf/learn_python_at_Dr_Dil/issues/new?title=Issue%20on%20page%20%2Fchapters/data_structure/generic_operations/min_max.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -180,7 +180,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dyusuf/learn_python_at_Dr_Dil/main?urlpath=tree/docs/chapters/data_structure/generic_operations/len.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dyusuf/learn_python_at_Dr_Dil/main?urlpath=tree/docs/chapters/data_structure/generic_operations/min_max.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -204,7 +204,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>len()</h1>
+                <h1>min() & max()</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -215,100 +215,91 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="len">
-<h1>len()<a class="headerlink" href="#len" title="Permalink to this headline">¶</a></h1>
-<p>Returns the number of items of iterable object:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="min-max">
+<h1>min() &amp; max()<a class="headerlink" href="#min-max" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>string: <code class="docutils literal notranslate"><span class="pre">'batur'</span></code></p></li>
-<li><p>list: <code class="docutils literal notranslate"><span class="pre">['paqa',</span> <span class="pre">'béliq',</span> <span class="pre">'eynek',</span> <span class="pre">'at',</span> <span class="pre">'xoraz',</span> <span class="pre">'wélisipit']</span></code></p></li>
-<li><p>tuple: <code class="docutils literal notranslate"><span class="pre">('paqa',</span> <span class="pre">'béliq',</span> <span class="pre">'eynek',</span> <span class="pre">'at',</span> <span class="pre">'xoraz',</span> <span class="pre">'wélisipit')</span></code></p></li>
-<li><p>set: <code class="docutils literal notranslate"><span class="pre">{'paqa',</span> <span class="pre">'béliq',</span> <span class="pre">'eynek',</span> <span class="pre">'at',</span> <span class="pre">'xoraz',</span> <span class="pre">'wélisipit'}</span></code></p></li>
-<li><p>dictionary: <code class="docutils literal notranslate"><span class="pre">{'p':'paqa',</span> <span class="pre">'b':'béliq',</span> <span class="pre">'e':'eynek',</span> <span class="pre">'a':'at',</span> <span class="pre">'y':'xoraz',</span> <span class="pre">'w':'wélisipit'}</span></code></p></li>
+<li><p>min() finds a smallest item of iterable object.</p></li>
+<li><p>max() finds a largest item of iterable object.</p></li>
 </ul>
-<p><strong>Question: how to get the length of a list and the length of its items?</strong></p>
+<p>The iterable objects:</p>
+<ul class="simple">
+<li><p>list: <code class="docutils literal notranslate"><span class="pre">[10,</span> <span class="pre">20,</span> <span class="pre">30,</span> <span class="pre">40,</span> <span class="pre">50,</span> <span class="pre">60,</span> <span class="pre">70,</span> <span class="pre">80,</span> <span class="pre">90,</span> <span class="pre">100]</span></code></p></li>
+<li><p>tuple: <code class="docutils literal notranslate"><span class="pre">(10,</span> <span class="pre">20,</span> <span class="pre">30,</span> <span class="pre">40,</span> <span class="pre">50,</span> <span class="pre">60,</span> <span class="pre">70,</span> <span class="pre">80,</span> <span class="pre">90,</span> <span class="pre">100)</span></code></p></li>
+<li><p>set: <code class="docutils literal notranslate"><span class="pre">{10,</span> <span class="pre">20,</span> <span class="pre">30,</span> <span class="pre">40,</span> <span class="pre">50,</span> <span class="pre">60,</span> <span class="pre">70,</span> <span class="pre">80,</span> <span class="pre">90,</span> <span class="pre">100}</span></code></p></li>
+<li><p>dictionary: <code class="docutils literal notranslate"><span class="pre">{'paqa':</span> <span class="pre">4,</span> <span class="pre">'béliq':</span> <span class="pre">5,</span> <span class="pre">'eynek':</span> <span class="pre">5,</span> <span class="pre">'at':</span> <span class="pre">2,</span> <span class="pre">'xoraz':</span> <span class="pre">5,</span> <span class="pre">'wélisipit':</span> <span class="pre">9}</span></code></p></li>
+</ul>
+<p><strong>Question: how to find the smallest or largest number in a list?</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a list</span>
-<span class="n">elipe</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">,</span> <span class="s1">&#39;wélisipit&#39;</span><span class="p">]</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
 
-<span class="c1"># get the length of the list</span>
-<span class="n">elipe_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">elipe</span><span class="p">)</span>
+<span class="c1"># get the smallest number</span>
+<span class="n">smallest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 
-<span class="c1"># get the length of the 1st item (a string)</span>
-<span class="n">item</span> <span class="o">=</span> <span class="n">elipe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">item_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="c1"># get the largest number</span>
+<span class="n">largest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The lenth of the list &#39;elipe&#39; is </span><span class="si">{</span><span class="n">elipe_len</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The 1st item is &#39;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">&#39; and its lenthg is </span><span class="si">{</span><span class="n">item_len</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;smallest: </span><span class="si">{</span><span class="n">smallest</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;largest: </span><span class="si">{</span><span class="n">largest</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The lenth of the list &#39;elipe&#39; is 6.
-The 1st item is &#39;paqa&#39; and its lenthg is 4.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>smallest: 10.
+largest: 100.
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Question: how to get the length of dictionary and the length of an item value?</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a dictionary</span>
-<span class="n">elipe</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="s1">&#39;xoraz&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span><span class="s1">&#39;wélisipit&#39;</span><span class="p">}</span>
-
-<span class="c1"># get the length of dictionary </span>
-<span class="n">elipe_lep</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">elipe</span><span class="p">)</span>
-
-<span class="c1"># get the length of an item value and print in a f-string</span>
-<span class="n">val</span> <span class="o">=</span> <span class="n">elipe</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
-<span class="n">val_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The length of the dictionary &#39;tertip_dict&#39; is </span><span class="si">{</span><span class="n">elipe_len</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The key &#39;b&#39; is paired with the value &#39;</span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s2">&#39; and the length of the value is </span><span class="si">{</span><span class="n">val_len</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The length of the dictionary &#39;tertip_dict&#39; is 6.
-The key &#39;b&#39; is paired with the value &#39;béliq&#39; and the length of the value is 5.
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Question: how to get the index numbers of a list?</strong></p>
+<p><strong>Question: how to find a shortest or longest word in a list of words?</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a list</span>
 <span class="n">tertip</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">,</span> <span class="s1">&#39;wélisipit&#39;</span><span class="p">]</span>
 
-<span class="c1"># get its length</span>
-<span class="n">tertip_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tertip</span><span class="p">)</span>
+<span class="c1"># find the shortest word by its length</span>
+<span class="n">shortest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">tertip</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">len</span><span class="p">)</span>
 
-<span class="c1"># get its index numbers</span>
-<span class="n">index_numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tertip_len</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;index_numbers: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># find the longest word by its length</span>
+<span class="n">longest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">tertip</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">len</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">()</span>
-
-<span class="c1"># print index and corresponding item</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;shortest: &quot;</span><span class="si">{</span><span class="n">shortest</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;longest: &quot;</span><span class="si">{</span><span class="n">longest</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>index_numbers: [0, 1, 2, 3, 4, 5]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shortest: &quot;at&quot;
+longest: &quot;wélisipit&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Question: how to find a word paried with smallest or largest value in a dictionary?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># buid a function to get 2nd value of a tuple</span>
+<span class="k">def</span> <span class="nf">get_2nd</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
-0 paqa
-1 béliq
-2 eynek
-3 at
-4 xoraz
-5 wélisipit
+<span class="c1"># build a dictionary</span>
+<span class="n">elipe</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;paqa&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;wélisipit&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+
+<span class="c1"># find the word paired with smallest value</span>
+<span class="n">smallest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">elipe</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">get_2nd</span><span class="p">)</span>
+
+<span class="c1"># find the word paired with largest value</span>
+<span class="n">largest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">elipe</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">get_2nd</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;paired with smallest value: </span><span class="si">{</span><span class="n">smallest</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;paired with largest value: </span><span class="si">{</span><span class="n">largest</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>paired with smallest value: (&#39;at&#39;, 2)
+paired with largest value: (&#39;wélisipit&#39;, 9)
 </pre></div>
 </div>
 </div>
