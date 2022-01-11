@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>min() &amp; max()</title>
+    <title>sorted()</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -197,6 +197,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   sorted()
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#min-max">
+   min(), max()
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -204,22 +222,110 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>min() & max()</h1>
+                <h1>sorted()</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   sorted()
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#min-max">
+   min(), max()
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="min-max">
-<h1>min() &amp; max()<a class="headerlink" href="#min-max" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="sorted">
+<h1>sorted()<a class="headerlink" href="#sorted" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">sorted()</span></code> sorts the items of an iterable object and returns a list.</p>
+<p>The iterable objects such as:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">min()</span></code> finds a smallest item of iterable object</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max()</span></code> finds a largest item of iterable object</p></li>
+<li><p>string: ‘xoraz’</p></li>
+<li><p>list: [10, 50, 60, 70, 80, 90, 100, 20, 30, 40,]</p></li>
+<li><p>tuple: (10, 20, 30, 40, 50, 60, 70, 80, 90, 100)</p></li>
+<li><p>set: {10, 20, 30, 40, 50, 60, 70, 80, 90, 100}</p></li>
+<li><p>dictionary: {‘paqa’: 4, ‘béliq’: 5, ‘eynek’: 5, ‘at’: 2, ‘xoraz’: 5, ‘wélisipit’: 9}</p></li>
+</ul>
+<p>Let’s see some sorting exmaples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort a string</span>
+<span class="n">a_str</span> <span class="o">=</span> <span class="s1">&#39;xoraz&#39;</span>
+
+<span class="nb">sorted</span><span class="p">(</span><span class="n">a_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;o&#39;, &#39;r&#39;, &#39;x&#39;, &#39;z&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort a string</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,]</span>
+
+<span class="nb">sorted</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort a dictionary</span>
+<span class="n">tertip</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;paqa&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;wélisipit&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+
+<span class="nb">sorted</span><span class="p">(</span><span class="n">tertip</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;at&#39;, &#39;béliq&#39;, &#39;eynek&#39;, &#39;paqa&#39;, &#39;wélisipit&#39;, &#39;xoraz&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">tertip</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 5, 5, 5, 9]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="min-max">
+<h1>min(), max()<a class="headerlink" href="#min-max" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">min()</span></code> finds a smallest item of an iterable object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max()</span></code> finds a largest item of an iterable object</p></li>
 </ul>
 <p>The iterable objects:</p>
 <ul class="simple">
