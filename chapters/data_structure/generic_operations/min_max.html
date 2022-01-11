@@ -218,8 +218,8 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="min-max">
 <h1>min() &amp; max()<a class="headerlink" href="#min-max" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>min() finds a smallest item of iterable object.</p></li>
-<li><p>max() finds a largest item of iterable object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min()</span></code> finds a smallest item of iterable object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max()</span></code> finds a largest item of iterable object</p></li>
 </ul>
 <p>The iterable objects:</p>
 <ul class="simple">
@@ -240,19 +240,21 @@
 <span class="c1"># get the largest number</span>
 <span class="n">largest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;smallest: </span><span class="si">{</span><span class="n">smallest</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;largest: </span><span class="si">{</span><span class="n">largest</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;smallest: </span><span class="si">{</span><span class="n">smallest</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;largest: </span><span class="si">{</span><span class="n">largest</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>smallest: 10.
-largest: 100.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>smallest: 10
+largest: 100
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong>Question: how to find a shortest or longest word in a list of words?</strong></p>
+<p>You can custom comparison criteria by calling a <code class="docutils literal notranslate"><span class="pre">key</span></code> function to find minimum or maximum value. The <code class="docutils literal notranslate"><span class="pre">key</span></code> function is executed on each item of an iterable and comparison is performed based on its return value.</p>
+<p>With a list of words (strings), you can call <code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">=</span> <span class="pre">len</span></code> (the <a class="reference internal" href="len.html"><span class="doc std std-doc">len()</span></a> function) to execute <code class="docutils literal notranslate"><span class="pre">len()</span></code> on each word and find a shortest or longest word by its length.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a list</span>
@@ -277,9 +279,10 @@ longest: &quot;wélisipit&quot;
 </div>
 </div>
 <p><strong>Question: how to find a word paried with smallest or largest value in a dictionary?</strong></p>
+<p>You can also custom comparison criteria by making your own function and provide it to <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># buid a function to get 2nd value of a tuple</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a function to get 2nd value of an ordered sequence</span>
 <span class="k">def</span> <span class="nf">get_2nd</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
@@ -287,10 +290,10 @@ longest: &quot;wélisipit&quot;
 <span class="n">elipe</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;paqa&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;wélisipit&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
 
 <span class="c1"># find the word paired with smallest value</span>
-<span class="n">smallest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">elipe</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">get_2nd</span><span class="p">)</span>
+<span class="n">smallest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">elipe</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="n">get_2nd</span><span class="p">)</span>
 
 <span class="c1"># find the word paired with largest value</span>
-<span class="n">largest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">elipe</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">get_2nd</span><span class="p">)</span>
+<span class="n">largest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">elipe</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="n">get_2nd</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;paired with smallest value: </span><span class="si">{</span><span class="n">smallest</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;paired with largest value: </span><span class="si">{</span><span class="n">largest</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
