@@ -197,6 +197,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   len()
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enumerate">
+   enumerate()
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -209,6 +227,24 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   len()
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enumerate">
+   enumerate()
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -217,7 +253,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="len">
 <h1>len()<a class="headerlink" href="#len" title="Permalink to this headline">¶</a></h1>
-<p>Returns the number of items of iterable object:</p>
+<p><code class="docutils literal notranslate"><span class="pre">len()</span></code> gets the number of items of iterable object:</p>
 <ul class="simple">
 <li><p>string: <code class="docutils literal notranslate"><span class="pre">'batur'</span></code></p></li>
 <li><p>list: <code class="docutils literal notranslate"><span class="pre">['paqa',</span> <span class="pre">'béliq',</span> <span class="pre">'eynek',</span> <span class="pre">'at',</span> <span class="pre">'xoraz',</span> <span class="pre">'wélisipit']</span></code></p></li>
@@ -238,14 +274,14 @@
 <span class="n">item</span> <span class="o">=</span> <span class="n">elipe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">item_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The lenth of the list &#39;elipe&#39; is </span><span class="si">{</span><span class="n">elipe_len</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The 1st item is &#39;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">&#39; and its lenthg is </span><span class="si">{</span><span class="n">item_len</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The length of the list &#39;elipe&#39; is </span><span class="si">{</span><span class="n">elipe_len</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The 1st item is &#39;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">&#39; and its length is </span><span class="si">{</span><span class="n">item_len</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The lenth of the list &#39;elipe&#39; is 6.
-The 1st item is &#39;paqa&#39; and its lenthg is 4.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The length of the list &#39;elipe&#39; is 6.
+The 1st item is &#39;paqa&#39; and its length is 4.
 </pre></div>
 </div>
 </div>
@@ -257,7 +293,7 @@ The 1st item is &#39;paqa&#39; and its lenthg is 4.
 <span class="n">elipe</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="s1">&#39;xoraz&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span><span class="s1">&#39;wélisipit&#39;</span><span class="p">}</span>
 
 <span class="c1"># get the length of dictionary </span>
-<span class="n">elipe_lep</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">elipe</span><span class="p">)</span>
+<span class="n">elipe_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">elipe</span><span class="p">)</span>
 
 <span class="c1"># get the length of an item value and print in a f-string</span>
 <span class="n">val</span> <span class="o">=</span> <span class="n">elipe</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
@@ -275,7 +311,28 @@ The key &#39;b&#39; is paired with the value &#39;béliq&#39; and the length of 
 </div>
 </div>
 </div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="enumerate">
+<h1>enumerate()<a class="headerlink" href="#enumerate" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>  adds a counter to iterable object and returns a enumerating object which can then be used for <span class="xref myst">looping</span> or converted into a list of tuples using the <code class="docutils literal notranslate"><span class="pre">list()</span></code> method.</p>
+<p>The iterable objects can be:</p>
+<ul class="simple">
+<li><p>string: <code class="docutils literal notranslate"><span class="pre">'batur'</span></code></p></li>
+<li><p>list: <code class="docutils literal notranslate"><span class="pre">['paqa',</span> <span class="pre">'béliq',</span> <span class="pre">'eynek',</span> <span class="pre">'at',</span> <span class="pre">'xoraz',</span> <span class="pre">'wélisipit']</span></code></p></li>
+<li><p>tuple: <code class="docutils literal notranslate"><span class="pre">('paqa',</span> <span class="pre">'béliq',</span> <span class="pre">'eynek',</span> <span class="pre">'at',</span> <span class="pre">'xoraz',</span> <span class="pre">'wélisipit')</span></code></p></li>
+<li><p>dictionary: <code class="docutils literal notranslate"><span class="pre">{'p':'paqa',</span> <span class="pre">'b':'béliq',</span> <span class="pre">'e':'eynek',</span> <span class="pre">'a':'at',</span> <span class="pre">'y':'xoraz',</span> <span class="pre">'w':'wélisipit'}</span></code></p>
+<ul>
+<li><p><strong>As of Python 3.7+, dict keeps insertion order</strong></p></li>
+</ul>
+</li>
+</ul>
+<p>The possbile applications:</p>
+<ul class="simple">
+<li><p>get the index with the element as you iterate</p></li>
+<li><p>count iterations</p></li>
+</ul>
 <p><strong>Question: how to get the index numbers of a list?</strong></p>
+<p>It can be done by combining <code class="docutils literal notranslate"><span class="pre">len()</span></code> and <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a list</span>
@@ -286,22 +343,25 @@ The key &#39;b&#39; is paired with the value &#39;béliq&#39; and the length of 
 
 <span class="c1"># get its index numbers</span>
 <span class="n">index_numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tertip_len</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;index_numbers: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">index_item</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">,</span> <span class="n">tertip</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;indexes of items:</span><span class="se">\n</span><span class="si">{</span><span class="n">index_item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">()</span>
 
 <span class="c1"># print index and corresponding item</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">index_numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">tertip</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>index_numbers: [0, 1, 2, 3, 4, 5]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>indexes of items:
+[(0, &#39;paqa&#39;), (1, &#39;béliq&#39;), (2, &#39;eynek&#39;), (3, &#39;at&#39;), (4, &#39;xoraz&#39;), (5, &#39;wélisipit&#39;)]
 
 0 paqa
 1 béliq
@@ -309,6 +369,81 @@ The key &#39;b&#39; is paired with the value &#39;béliq&#39; and the length of 
 3 at
 4 xoraz
 5 wélisipit
+</pre></div>
+</div>
+</div>
+</div>
+<p>It can also be done by calling <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a list</span>
+<span class="n">tertip</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">,</span> <span class="s1">&#39;wélisipit&#39;</span><span class="p">]</span>
+
+<span class="c1"># get its index numbers</span>
+<span class="n">index_item</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">tertip</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;indexes of items:</span><span class="se">\n</span><span class="si">{</span><span class="n">index_item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># print index and corresponding item</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_item</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_item</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>indexes of items:
+[(0, &#39;paqa&#39;), (1, &#39;béliq&#39;), (2, &#39;eynek&#39;), (3, &#39;at&#39;), (4, &#39;xoraz&#39;), (5, &#39;wélisipit&#39;)]
+
+0 paqa
+1 béliq
+2 eynek
+3 at
+4 xoraz
+5 wélisipit
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Question: how to count the iterations of a list?</strong></p>
+<p>This can be simply done by calling <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> by specifying <code class="docutils literal notranslate"><span class="pre">start=1</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a list</span>
+<span class="n">tertip</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">,</span> <span class="s1">&#39;wélisipit&#39;</span><span class="p">]</span>
+
+<span class="c1"># get the counts of iterations</span>
+<span class="n">iterations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">tertip</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;counts of iterations:</span><span class="se">\n</span><span class="si">{</span><span class="n">iterations</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># print counts of iterations and corresponding item</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iterations</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">iterations</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iterations</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">iterations</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iterations</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">iterations</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iterations</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">iterations</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iterations</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">iterations</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iterations</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">iterations</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counts of iterations:
+[(1, &#39;paqa&#39;), (2, &#39;béliq&#39;), (3, &#39;eynek&#39;), (4, &#39;at&#39;), (5, &#39;xoraz&#39;), (6, &#39;wélisipit&#39;)]
+
+1 paqa
+2 béliq
+3 eynek
+4 at
+5 xoraz
+6 wélisipit
 </pre></div>
 </div>
 </div>
