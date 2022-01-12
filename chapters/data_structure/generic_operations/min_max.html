@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>sorted()</title>
+    <title>How to sort an iterable?</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -202,14 +202,39 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   sorted()
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-a-string">
+   Sort a string
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#min-max">
-   min(), max()
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-a-list-of-words">
+   Sort a list of words
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-a-list-of-numbers">
+   Sort a list of numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-a-dictionary">
+   Sort a dictionary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-the-smallest-largest-number">
+   Find the smallest/largest number
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-shortest-longest-word">
+   Find shortest/longest word
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-a-key-paried-with-smallest-largest-value">
+   Find a key paried with smallest/largest value
   </a>
  </li>
 </ul>
@@ -222,7 +247,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>sorted()</h1>
+                <h1>How to sort an iterable?</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -232,14 +257,39 @@
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   sorted()
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-a-string">
+   Sort a string
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#min-max">
-   min(), max()
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-a-list-of-words">
+   Sort a list of words
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-a-list-of-numbers">
+   Sort a list of numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-a-dictionary">
+   Sort a dictionary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-the-smallest-largest-number">
+   Find the smallest/largest number
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-shortest-longest-word">
+   Find shortest/longest word
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-a-key-paried-with-smallest-largest-value">
+   Find a key paried with smallest/largest value
   </a>
  </li>
 </ul>
@@ -251,141 +301,339 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="sorted">
-<h1>sorted()<a class="headerlink" href="#sorted" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">sorted()</span></code> sorts the items of an iterable object and returns a list.</p>
-<p>The iterable objects such as:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-sort-an-iterable">
+<h1>How to sort an iterable?<a class="headerlink" href="#how-to-sort-an-iterable" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>string: ‘xoraz’</p></li>
-<li><p>list: [10, 50, 60, 70, 80, 90, 100, 20, 30, 40,]</p></li>
-<li><p>tuple: (10, 20, 30, 40, 50, 60, 70, 80, 90, 100)</p></li>
-<li><p>set: {10, 20, 30, 40, 50, 60, 70, 80, 90, 100}</p></li>
-<li><p>dictionary: {‘paqa’: 4, ‘béliq’: 5, ‘eynek’: 5, ‘at’: 2, ‘xoraz’: 5, ‘wélisipit’: 9}</p></li>
+<li><p>a string: <code class="docutils literal notranslate"><span class="pre">'NbDymkpVJnMYcQAILrgC'</span></code></p></li>
+<li><p>a list of words: <code class="docutils literal notranslate"><span class="pre">['xoraz',</span> <span class="pre">'paqa',</span> <span class="pre">'at',</span> <span class="pre">'eynek',</span> <span class="pre">'wélisipit',</span> <span class="pre">'béliq']</span></code></p></li>
+<li><p>a list of numbers: <code class="docutils literal notranslate"><span class="pre">[14,</span> <span class="pre">15,</span> <span class="pre">1,</span> <span class="pre">8,</span> <span class="pre">16,</span> <span class="pre">11,</span> <span class="pre">5,</span> <span class="pre">22]</span></code></p></li>
+<li><p>a dictionary: <code class="docutils literal notranslate"><span class="pre">{'paqa':</span> <span class="pre">4,</span> <span class="pre">'béliq':</span> <span class="pre">5,</span> <span class="pre">'eynek':</span> <span class="pre">5,</span> <span class="pre">'at':</span> <span class="pre">2,</span> <span class="pre">'xoraz':</span> <span class="pre">5,</span> <span class="pre">'wélisipit':</span> <span class="pre">9}</span></code></p></li>
 </ul>
-<p>Let’s see some sorting exmaples:</p>
+<div class="section" id="sort-a-string">
+<h2>Sort a string<a class="headerlink" href="#sort-a-string" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort a string</span>
-<span class="n">a_str</span> <span class="o">=</span> <span class="s1">&#39;xoraz&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a string</span>
+<span class="n">a_str</span> <span class="o">=</span> <span class="s1">&#39;NbDymkpVJnMYcQAILrgC&#39;</span>
 
-<span class="nb">sorted</span><span class="p">(</span><span class="n">a_str</span><span class="p">)</span>
+<span class="c1"># sort the string by alphabetical order</span>
+<span class="n">a_str_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a_str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_str_sort</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;o&#39;, &#39;r&#39;, &#39;x&#39;, &#39;z&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort a string</span>
-<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,]</span>
-
-<span class="nb">sorted</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;A&#39;, &#39;C&#39;, &#39;D&#39;, &#39;I&#39;, &#39;J&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;Q&#39;, &#39;V&#39;, &#39;Y&#39;, &#39;b&#39;, &#39;c&#39;, &#39;g&#39;, &#39;k&#39;, &#39;m&#39;, &#39;n&#39;, &#39;p&#39;, &#39;r&#39;, &#39;y&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort a dictionary</span>
-<span class="n">tertip</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;paqa&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;wélisipit&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
-
-<span class="nb">sorted</span><span class="p">(</span><span class="n">tertip</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort the string by alphabetical order while ignoring cases</span>
+<span class="n">a_str_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a_str</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_str_sort</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;at&#39;, &#39;béliq&#39;, &#39;eynek&#39;, &#39;paqa&#39;, &#39;wélisipit&#39;, &#39;xoraz&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;A&#39;, &#39;b&#39;, &#39;c&#39;, &#39;C&#39;, &#39;D&#39;, &#39;g&#39;, &#39;I&#39;, &#39;J&#39;, &#39;k&#39;, &#39;L&#39;, &#39;m&#39;, &#39;M&#39;, &#39;N&#39;, &#39;n&#39;, &#39;p&#39;, &#39;Q&#39;, &#39;r&#39;, &#39;V&#39;, &#39;y&#39;, &#39;Y&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">tertip</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort the string in reverse order</span>
+<span class="n">a_str_sort_rev</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a_str</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_str_sort_rev</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 5, 5, 5, 9]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;y&#39;, &#39;Y&#39;, &#39;V&#39;, &#39;r&#39;, &#39;Q&#39;, &#39;p&#39;, &#39;N&#39;, &#39;n&#39;, &#39;m&#39;, &#39;M&#39;, &#39;L&#39;, &#39;k&#39;, &#39;J&#39;, &#39;I&#39;, &#39;g&#39;, &#39;D&#39;, &#39;c&#39;, &#39;C&#39;, &#39;b&#39;, &#39;A&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="min-max">
-<h1>min(), max()<a class="headerlink" href="#min-max" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">min()</span></code> finds a smallest item of an iterable object</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max()</span></code> finds a largest item of an iterable object</p></li>
-</ul>
-<p>The iterable objects:</p>
-<ul class="simple">
-<li><p>list: <code class="docutils literal notranslate"><span class="pre">[10,</span> <span class="pre">20,</span> <span class="pre">30,</span> <span class="pre">40,</span> <span class="pre">50,</span> <span class="pre">60,</span> <span class="pre">70,</span> <span class="pre">80,</span> <span class="pre">90,</span> <span class="pre">100]</span></code></p></li>
-<li><p>tuple: <code class="docutils literal notranslate"><span class="pre">(10,</span> <span class="pre">20,</span> <span class="pre">30,</span> <span class="pre">40,</span> <span class="pre">50,</span> <span class="pre">60,</span> <span class="pre">70,</span> <span class="pre">80,</span> <span class="pre">90,</span> <span class="pre">100)</span></code></p></li>
-<li><p>set: <code class="docutils literal notranslate"><span class="pre">{10,</span> <span class="pre">20,</span> <span class="pre">30,</span> <span class="pre">40,</span> <span class="pre">50,</span> <span class="pre">60,</span> <span class="pre">70,</span> <span class="pre">80,</span> <span class="pre">90,</span> <span class="pre">100}</span></code></p></li>
-<li><p>dictionary: <code class="docutils literal notranslate"><span class="pre">{'paqa':</span> <span class="pre">4,</span> <span class="pre">'béliq':</span> <span class="pre">5,</span> <span class="pre">'eynek':</span> <span class="pre">5,</span> <span class="pre">'at':</span> <span class="pre">2,</span> <span class="pre">'xoraz':</span> <span class="pre">5,</span> <span class="pre">'wélisipit':</span> <span class="pre">9}</span></code></p></li>
-</ul>
-<p><strong>Question: how to find the smallest or largest number in a list?</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a list</span>
-<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
-
-<span class="c1"># get the smallest number</span>
-<span class="n">smallest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-
-<span class="c1"># get the largest number</span>
-<span class="n">largest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;smallest: </span><span class="si">{</span><span class="n">smallest</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;largest: </span><span class="si">{</span><span class="n">largest</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_str_sort</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">a_str_sort</span><span class="p">)</span>
+<span class="n">a_str_sort_rev</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">a_str_sort_rev</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_str_sort</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_str_sort_rev</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>smallest: 10
-largest: 100
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NbDymkpVJnMYcQAILrgC
+AbcCDgIJkLmMNnpQrVyY
+yYVrQpNnmMLkJIgDcCbA
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Question: how to find a shortest or longest word in a list of words?</strong></p>
-<p>You can custom comparison criteria by calling a <code class="docutils literal notranslate"><span class="pre">key</span></code> function to find minimum or maximum value. The <code class="docutils literal notranslate"><span class="pre">key</span></code> function is executed on each item of an iterable and comparison is performed based on its return value.</p>
-<p>With a list of words (strings), you can call <code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">=</span> <span class="pre">len</span></code> (the <a class="reference internal" href="len.html"><span class="doc std std-doc">len()</span></a> function) to execute <code class="docutils literal notranslate"><span class="pre">len()</span></code> on each word and find a shortest or longest word by its length.</p>
+</div>
+<div class="section" id="sort-a-list-of-words">
+<h2>Sort a list of words<a class="headerlink" href="#sort-a-list-of-words" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a list of words</span>
+<span class="n">jumlar</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;xoraz&#39;</span><span class="p">,</span> <span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;Wélisipit&#39;</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">]</span>
+
+<span class="c1"># sort the list by alphabetical order</span>
+<span class="n">jumlar_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">jumlar</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jumlar_sorted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Wélisipit&#39;, &#39;at&#39;, &#39;béliq&#39;, &#39;eynek&#39;, &#39;paqa&#39;, &#39;xoraz&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort the list by alphabetical order while ignoring cases </span>
+<span class="n">jumlar_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">jumlar</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jumlar_sorted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;at&#39;, &#39;béliq&#39;, &#39;eynek&#39;, &#39;paqa&#39;, &#39;Wélisipit&#39;, &#39;xoraz&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a list of words</span>
+<span class="n">jumlar</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;xoraz&#39;</span><span class="p">,</span> <span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;Wélisipit&#39;</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">]</span>
+
+<span class="c1"># sort the list by length of words</span>
+<span class="n">jumlar_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">jumlar</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">len</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jumlar_sorted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;at&#39;, &#39;paqa&#39;, &#39;xoraz&#39;, &#39;eynek&#39;, &#39;béliq&#39;, &#39;Wélisipit&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># it can be done with list.sort()</span>
+<span class="c1"># while the sort is done in-place of jumlar</span>
+<span class="c1"># it is faster since it doesn’t create a new list</span>
+<span class="n">jumlar</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">jumlar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;at&#39;, &#39;béliq&#39;, &#39;eynek&#39;, &#39;paqa&#39;, &#39;Wélisipit&#39;, &#39;xoraz&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sort-a-list-of-numbers">
+<h2>Sort a list of numbers<a class="headerlink" href="#sort-a-list-of-numbers" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a list of numbers</span>
+
+<span class="c1"># sort numbers: large to small</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+<span class="n">numbers_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers_sort</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[22, 16, 15, 14, 11, 8, 5, 1]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># with list.sort(), in-place, faster</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[22, 16, 15, 14, 11, 8, 5, 1]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sort-a-dictionary">
+<h2>Sort a dictionary<a class="headerlink" href="#sort-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a dictionary</span>
+<span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;paqa&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Wélisipit&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
+
+<span class="c1"># build a function to get 2nd value of an ordered sequence</span>
+<span class="k">def</span> <span class="nf">get_2nd</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># sort by value</span>
+<span class="n">a_dict_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">get_2nd</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_dict_sort</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;paqa&#39;, 4), (&#39;eynek&#39;, 5), (&#39;xoraz&#39;, 5), (&#39;at&#39;, 12), (&#39;Wélisipit&#39;, 19), (&#39;béliq&#39;, 25)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a function to get 2nd value of an ordered sequence</span>
+<span class="k">def</span> <span class="nf">get_2nd</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># sort by value</span>
+<span class="n">a_dict_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">get_2nd</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_dict_sort</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;paqa&#39;, 4), (&#39;eynek&#39;, 5), (&#39;xoraz&#39;, 5), (&#39;at&#39;, 12), (&#39;Wélisipit&#39;, 19), (&#39;béliq&#39;, 25)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a function to get 2nd value of an ordered sequence</span>
+<span class="k">def</span> <span class="nf">get_len</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># sort by value</span>
+<span class="n">a_dict_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">get_len</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_dict_sort</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;at&#39;, 12), (&#39;paqa&#39;, 4), (&#39;béliq&#39;, 25), (&#39;eynek&#39;, 5), (&#39;xoraz&#39;, 5), (&#39;Wélisipit&#39;, 19)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_dict_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_dict_sort</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;at&#39;, 12), (&#39;paqa&#39;, 4), (&#39;béliq&#39;, 25), (&#39;eynek&#39;, 5), (&#39;xoraz&#39;, 5), (&#39;Wélisipit&#39;, 19)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="find-the-smallest-largest-number">
+<h2>Find the smallest/largest number<a class="headerlink" href="#find-the-smallest-largest-number" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+
+<span class="c1"># find smallest</span>
+<span class="n">smallest_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">numbers</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">smallest_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">smallest_sorted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">smallest_min</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find largest</span>
+<span class="n">largest_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">numbers</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">largest_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">largest_sorted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">largest_max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
+22
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="find-shortest-longest-word">
+<h2>Find shortest/longest word<a class="headerlink" href="#find-shortest-longest-word" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a list</span>
 <span class="n">tertip</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">,</span> <span class="s1">&#39;wélisipit&#39;</span><span class="p">]</span>
 
-<span class="c1"># find the shortest word by its length</span>
-<span class="n">shortest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">tertip</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">len</span><span class="p">)</span>
+<span class="c1"># find the shortest word </span>
+<span class="n">shortest_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">tertip</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">len</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">shortest_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">tertip</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">len</span><span class="p">)</span>
 
-<span class="c1"># find the longest word by its length</span>
-<span class="n">longest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">tertip</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">len</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;shortest: &quot;</span><span class="si">{</span><span class="n">shortest</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;longest: &quot;</span><span class="si">{</span><span class="n">longest</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shortest_sort</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shortest_min</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shortest: &quot;at&quot;
-longest: &quot;wélisipit&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>at
+at
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Question: how to find a word paried with smallest or largest value in a dictionary?</strong></p>
-<p>You can also custom comparison criteria by making your own function and provide it to <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the longest word by its length</span>
+<span class="n">longest_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">tertip</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">len</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">longest_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">tertip</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">len</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">longest_sort</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">longest_max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>wélisipit
+wélisipit
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="find-a-key-paried-with-smallest-largest-value">
+<h2>Find a key paried with smallest/largest value<a class="headerlink" href="#find-a-key-paried-with-smallest-largest-value" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build a function to get 2nd value of an ordered sequence</span>
@@ -393,23 +641,40 @@ longest: &quot;wélisipit&quot;
     <span class="k">return</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># build a dictionary</span>
-<span class="n">elipe</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;paqa&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;wélisipit&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+<span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;paqa&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;eynek&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Wélisipit&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
 
 <span class="c1"># find the word paired with smallest value</span>
-<span class="n">smallest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">elipe</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="n">get_2nd</span><span class="p">)</span>
+<span class="n">smallest_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="n">get_2nd</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">smallest_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="n">get_2nd</span><span class="p">)</span>
 
-<span class="c1"># find the word paired with largest value</span>
-<span class="n">largest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">elipe</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="n">get_2nd</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;paired with smallest value: </span><span class="si">{</span><span class="n">smallest</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;paired with largest value: </span><span class="si">{</span><span class="n">largest</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">smallest_sort</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">smallest_min</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>paired with smallest value: (&#39;at&#39;, 2)
-paired with largest value: (&#39;wélisipit&#39;, 9)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;paqa&#39;, 4)
+(&#39;paqa&#39;, 4)
 </pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the word paired with largest value</span>
+<span class="n">largest_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="n">get_2nd</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">largest_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="n">get_2nd</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">largest_sort</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">largest_max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;béliq&#39;, 25)
+(&#39;béliq&#39;, 25)
+</pre></div>
+</div>
 </div>
 </div>
 </div>
