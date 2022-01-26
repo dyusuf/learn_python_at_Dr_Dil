@@ -227,7 +227,7 @@
 <span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">num</span><span class="o">**</span><span class="mi">3</span>
 
-<span class="n">output</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 </pre></div>
@@ -245,7 +245,7 @@
 
 <span class="n">cube</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">num</span> <span class="p">:</span> <span class="n">num</span><span class="o">**</span><span class="mi">3</span>
 
-<span class="n">output</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 </pre></div>
@@ -261,7 +261,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Immediately Invoked Function Expression </span>
 
-<span class="n">output</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">num</span> <span class="p">:</span> <span class="n">num</span><span class="o">**</span><span class="mi">3</span><span class="p">)(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">num</span> <span class="p">:</span> <span class="n">num</span><span class="o">**</span><span class="mi">3</span><span class="p">)(</span><span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 </pre></div>
@@ -273,15 +273,15 @@
 </div>
 </div>
 </div>
-<p>Example 2: with two inputs</p>
+<p>Example 2: with multiple inputs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the traditional Python def function</span>
 
-<span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">expo</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">cal_expo</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">expo</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">num</span><span class="o">**</span><span class="n">expo</span>
 
-<span class="n">output</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">cal_expo</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">expo</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 </pre></div>
@@ -295,7 +295,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">num</span><span class="p">,</span> <span class="n">expo</span><span class="p">:</span> <span class="n">num</span><span class="o">**</span><span class="n">expo</span><span class="p">)(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">num</span><span class="p">,</span> <span class="n">expo</span><span class="p">:</span> <span class="n">num</span><span class="o">**</span><span class="n">expo</span><span class="p">)(</span><span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">expo</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 </pre></div>
@@ -312,7 +312,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lambda and inline if</span>
 
-<span class="n">output</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;even&#39;</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="k">2</span> == 0 else &#39;odd&#39;)(3)
+<span class="n">output</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;even&#39;</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="k">2</span> == 0 else &#39;odd&#39;)(x=3)
 
 <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 </pre></div>
