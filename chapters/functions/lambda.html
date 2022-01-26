@@ -219,6 +219,7 @@
 <h1>Lambda Functions<a class="headerlink" href="#lambda-functions" title="Permalink to this headline">¶</a></h1>
 <p>Python Lambda functions are single line, anonymous functions. They are used to create small one-line functions in cases where a normal function would be an overkill.</p>
 <p>Syntax: <strong>lambda</strong> <code class="docutils literal notranslate"><span class="pre">parameters</span></code>: <code class="docutils literal notranslate"><span class="pre">expression</span></code></p>
+<p>Example 1: how to use lambda?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the traditional Python def function</span>
@@ -272,6 +273,7 @@
 </div>
 </div>
 </div>
+<p>Example 2: with two inputs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the traditional Python def function</span>
@@ -305,6 +307,7 @@
 </div>
 </div>
 </div>
+<p>Example 3: combine with inline if</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lambda and inline if</span>
@@ -321,9 +324,33 @@
 </div>
 </div>
 </div>
+<p>Example 4: used as a key function of <code class="docutils literal notranslate"><span class="pre">sorted</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lambda &amp; sorted </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sorted &amp; traditional def function</span>
+
+<span class="c1"># build a dictionary</span>
+<span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;paqa&#39;</span><span class="p">:</span> <span class="mi">124</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Wélisipit&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">get_len_val</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># sort by length of words (keys)</span>
+<span class="n">a_dict_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="n">get_len_val</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a_dict_sort</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;paqa&#39;, 124), (&#39;béliq&#39;, 25), (&#39;xoraz&#39;, 5), (&#39;Wélisipit&#39;, 19)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sorted &amp; lambda</span>
 
 <span class="c1"># build a dictionary</span>
 <span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;paqa&#39;</span><span class="p">:</span> <span class="mi">124</span><span class="p">,</span> <span class="s1">&#39;béliq&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;xoraz&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Wélisipit&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
