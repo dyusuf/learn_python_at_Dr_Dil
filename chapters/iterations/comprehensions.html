@@ -500,6 +500,7 @@
 </div>
 <div class="section" id="dictionary-comprehension">
 <h2>Dictionary comprehension<a class="headerlink" href="#dictionary-comprehension" title="Permalink to this headline">¶</a></h2>
+<p>Create a dictionary maping numbers and their squares or cubes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_cube</span> <span class="o">=</span> <span class="p">{</span><span class="n">num</span><span class="p">:</span><span class="n">num</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0 else num**3 for num in range(0, 11)}
@@ -509,6 +510,39 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0, 1: 1, 2: 4, 3: 27, 4: 16, 5: 125, 6: 36, 7: 343, 8: 64, 9: 729, 10: 100}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create a dictionary from a text</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="s1">&#39;Dilmurat 44 male</span><span class="se">\n</span><span class="s1">Bilal 25 male</span><span class="se">\n</span><span class="s1">Dina 1 female&#39;</span>
+
+<span class="n">split_info</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)]</span>
+
+<span class="n">info_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">),</span> <span class="s1">&#39;gender&#39;</span><span class="p">:</span><span class="n">gender</span><span class="p">}</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">gender</span> <span class="ow">in</span> <span class="n">split_info</span> <span class="k">if</span> <span class="n">age</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">info_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Dilmurat&#39;: {&#39;age&#39;: 44, &#39;gender&#39;: &#39;male&#39;}, &#39;Bilal&#39;: {&#39;age&#39;: 25, &#39;gender&#39;: &#39;male&#39;}, &#39;Dina&#39;: {&#39;age&#39;: 1, &#39;gender&#39;: &#39;female&#39;}}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Filter a dictionary based on values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Dilmurat&#39;: {&#39;age&#39;: 44, &#39;gender&#39;: &#39;male&#39;},
+ &#39;Bilal&#39;: {&#39;age&#39;: 25, &#39;gender&#39;: &#39;male&#39;}}
 </pre></div>
 </div>
 </div>
