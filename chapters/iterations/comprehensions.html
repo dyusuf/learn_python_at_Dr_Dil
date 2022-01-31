@@ -649,7 +649,7 @@ output:
 <span class="nb">print</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;processing: list comprehension, dict items, for loop, if condition, dict&#39;</span><span class="p">)</span>
-<span class="n">filter_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">])</span>
+<span class="n">filter_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="n">info</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">info_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">)</span>
