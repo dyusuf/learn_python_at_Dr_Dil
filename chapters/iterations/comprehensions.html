@@ -307,7 +307,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="comprehensions">
 <h1>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">List/set/dictionary</span></code> comprehension is a way to build a new <code class="docutils literal notranslate"><span class="pre">list/set/dictionary</span></code> by applying an expression to each item in an iterable such as a <code class="docutils literal notranslate"><span class="pre">string</span></code>, a <code class="docutils literal notranslate"><span class="pre">list</span></code>, a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>, a <code class="docutils literal notranslate"><span class="pre">file</span></code>, a <code class="docutils literal notranslate"><span class="pre">range</span></code> etc.</p>
+<p><code class="docutils literal notranslate"><span class="pre">List/set/dictionary</span></code> comprehension is a way to build a new <code class="docutils literal notranslate"><span class="pre">list/set/dictionary</span></code> by applying an expression to each item in an iterable such as a <code class="docutils literal notranslate"><span class="pre">string</span></code>, a <code class="docutils literal notranslate"><span class="pre">list</span></code>, a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>, a <code class="docutils literal notranslate"><span class="pre">range</span></code> etc.</p>
 <p>Advantages:</p>
 <ul class="simple">
 <li><p>concise</p></li>
@@ -321,19 +321,23 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make an empty list and append one at a time</span>
 <span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input:&#39;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;processing: append item at a time manually&#39;</span><span class="p">)</span>
 <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 8, 27, 64]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input: []
+processing: append item at a time manually
+output: [0, 1, 8, 27, 64]
 </pre></div>
 </div>
 </div>
@@ -342,16 +346,20 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make an empty list and append items using for loop</span>
 <span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input:&#39;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;processing: range(0, 5), for-loop, append automatically&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
     <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>    
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 8, 27, 64]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input: []
+processing: range(0, 5), for-loop, append automatically
+output: [0, 1, 8, 27, 64]
 </pre></div>
 </div>
 </div>
@@ -363,12 +371,14 @@
 <span class="c1"># syntax: [ expression for var in iterable   ]</span>
 <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span> <span class="n">num</span><span class="o">**</span><span class="mi">3</span>     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input &amp; processing: list comprehension, range(0, 5), for-loop&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 8, 27, 64]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input &amp; processing: list comprehension, range(0, 5), for-loop
+output: [0, 1, 8, 27, 64]
 </pre></div>
 </div>
 </div>
@@ -380,14 +390,20 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of name and age pair</span>
 <span class="n">ages</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;diLmurat&#39;</span><span class="p">,</span> <span class="mi">44</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Bilal&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Nijat&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input:&#39;</span><span class="p">,</span> <span class="n">ages</span><span class="p">)</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;processing: list comprehension, tuples, for-loop&#39;</span><span class="p">)</span>
+<span class="c1"># iterate tuples in list</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">ages</span><span class="p">]</span>
 
-<span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">ages</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">new_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Dilmurat:44&#39;, &#39;Bilal:25&#39;, &#39;Nijat:30&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input: [(&#39;diLmurat&#39;, 44), (&#39;Bilal&#39;, 25), (&#39;Nijat&#39;, 30)]
+processing: list comprehension, tuples, for-loop
+output: [&#39;Dilmurat\t44&#39;, &#39;Bilal\t25&#39;, &#39;Nijat\t30&#39;]
 </pre></div>
 </div>
 </div>
@@ -396,13 +412,20 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of name and age pair</span>
 <span class="n">ages</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;diLmurat&#39;</span><span class="p">,</span> <span class="mi">44</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Bilal&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Nijat&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input:&#39;</span><span class="p">,</span> <span class="n">ages</span><span class="p">)</span>
 
-<span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)))</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="n">ages</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;processing: list comprehension, unpacked tuples, for-loop&#39;</span><span class="p">)</span>
+<span class="c1"># unpack item</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)))</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="n">ages</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">new_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Dilmurat:44&#39;, &#39;Bilal:25&#39;, &#39;Nijat:30&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input: [(&#39;diLmurat&#39;, 44), (&#39;Bilal&#39;, 25), (&#39;Nijat&#39;, 30)]
+processing: list comprehension, unpacked tuples, for-loop
+output: [&#39;Dilmurat\t44&#39;, &#39;Bilal\t25&#39;, &#39;Nijat\t30&#39;]
 </pre></div>
 </div>
 </div>
@@ -414,14 +437,68 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a dictionary of name and age pair</span>
-<span class="n">ages</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;diLmurat&#39;</span><span class="p">,</span> <span class="mi">44</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Bilal&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Nijat&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)]</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;diLmurat&#39;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;Bilal&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Nijat&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
 
-<span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)))</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="n">ages</span><span class="p">]</span>
+<span class="c1"># iterate the dictionary keys</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">ages</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ages</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Dilmurat:44&#39;, &#39;Bilal:25&#39;, &#39;Nijat:30&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>diLmurat 44
+Bilal 25
+Nijat 30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a dictionary of name and age pair</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;diLmurat&#39;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;Bilal&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Nijat&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+
+<span class="c1"># iterate the dictionary items</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">ages</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># unpack item of tuple</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="n">ages</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;diLmurat&#39;, 44)
+(&#39;Bilal&#39;, 25)
+(&#39;Nijat&#39;, 30)
+
+diLmurat 44
+Bilal 25
+Nijat 30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a dictionary of name and age pair</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;diLmurat&#39;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;Bilal&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Nijat&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input:&#39;</span><span class="p">,</span> <span class="n">ages</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;processing: list comprehension, unpacked tuples, for-loop&#39;</span><span class="p">)</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)))</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="n">ages</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">new_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input: {&#39;diLmurat&#39;: 44, &#39;Bilal&#39;: 25, &#39;Nijat&#39;: 30}
+processing: list comprehension, unpacked tuples, for-loop
+output: [&#39;Dilmurat\t44&#39;, &#39;Bilal\t25&#39;, &#39;Nijat\t30&#39;]
 </pre></div>
 </div>
 </div>
@@ -433,12 +510,16 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filter to excludue odd numbers</span>
 
-<span class="p">[</span><span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0]
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input &amp; processing: list comprehension, range(0, 11), for-loop, if condition&#39;</span><span class="p">)</span>
+<span class="n">even_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0]
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">even_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8, 10]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input &amp; processing: list comprehension, range(0, 11), for-loop, if condition
+output: [0, 2, 4, 6, 8, 10]
 </pre></div>
 </div>
 </div>
@@ -447,12 +528,16 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filter to excludue even numbers</span>
 
-<span class="p">[</span><span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> != 0]
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input &amp; processing: list comprehension, range(0, 11), for-loop, if condition&#39;</span><span class="p">)</span>
+<span class="n">odd_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> != 0]
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">odd_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 5, 7, 9]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input &amp; processing: list comprehension, range(0, 11), for-loop, if condition
+output: [1, 3, 5, 7, 9]
 </pre></div>
 </div>
 </div>
@@ -461,21 +546,16 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a list of numbers: cube of odd and square of even</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input &amp; processing: list comprehension, range(0, 11), for-loop, inline if&#39;</span><span class="p">)</span>
 <span class="n">square_cube</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0 else num**3 for num in range(0, 11)]
 
-<span class="nb">print</span><span class="p">(</span><span class="n">even_odd</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">square_cube</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># create a list of numbers: cube of odd and square of even</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">square_cube</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0 else num**3 for num in range(0, 11)]
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">even_odd</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;even_odd&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input &amp; processing: list comprehension, range(0, 11), for-loop, inline if
+output: [0, 1, 4, 27, 16, 125, 36, 343, 64, 729, 100]
 </pre></div>
 </div>
 </div>
@@ -486,13 +566,16 @@
 <h2>Set comprehesion<a class="headerlink" href="#set-comprehesion" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_cube</span> <span class="o">=</span> <span class="p">{</span><span class="n">num</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0 else num**3 for num in range(0, 11)}
-<span class="nb">print</span><span class="p">(</span><span class="n">square_cube</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input &amp; processing: set comprehension, range(0, 11), for-loop, inline if&#39;</span><span class="p">)</span>
+<span class="n">square_cube</span> <span class="o">=</span> <span class="p">{</span><span class="n">num</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0 else num**3 for num in range(0, 11)}
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">square_cube</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, 1, 64, 4, 36, 100, 16, 343, 729, 27, 125}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input &amp; processing: set comprehension, range(0, 11), for-loop, inline if
+output: {0, 1, 64, 4, 36, 100, 16, 343, 729, 27, 125}
 </pre></div>
 </div>
 </div>
@@ -503,13 +586,16 @@
 <p>Create a dictionary maping numbers and their squares or cubes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_cube</span> <span class="o">=</span> <span class="p">{</span><span class="n">num</span><span class="p">:</span><span class="n">num</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0 else num**3 for num in range(0, 11)}
-<span class="nb">print</span><span class="p">(</span><span class="n">square_cube</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input &amp; processing: dictionary comprehension, range(0, 11), for-loop, inline if&#39;</span><span class="p">)</span>
+<span class="n">square_cube</span> <span class="o">=</span> <span class="p">{</span><span class="n">num</span> <span class="p">:</span> <span class="n">num</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span> == 0 else num**3 for num in range(0, 11)}
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">square_cube</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0, 1: 1, 2: 4, 3: 27, 4: 16, 5: 125, 6: 36, 7: 343, 8: 64, 9: 729, 10: 100}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input &amp; processing: dictionary comprehension, range(0, 11), for-loop, inline if
+output: {0: 0, 1: 1, 2: 4, 3: 27, 4: 16, 5: 125, 6: 36, 7: 343, 8: 64, 9: 729, 10: 100}
 </pre></div>
 </div>
 </div>
@@ -518,17 +604,32 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="s1">&#39;Dilmurat 44 male</span><span class="se">\n</span><span class="s1">Bilal 25 male</span><span class="se">\n</span><span class="s1">Dina 1 female&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;processing 1: list comprehension, string, for-loop&#39;</span><span class="p">)</span>
 <span class="n">split_info</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;processing 2: dictionary comprehension, unpacked lists, for-loop&#39;</span><span class="p">)</span>
+<span class="n">info_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">),</span> <span class="s1">&#39;gender&#39;</span><span class="p">:</span><span class="n">gender</span><span class="p">}</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">gender</span> <span class="ow">in</span> <span class="n">split_info</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">()</span>
 
-<span class="n">info_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">),</span> <span class="s1">&#39;gender&#39;</span><span class="p">:</span><span class="n">gender</span><span class="p">}</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">gender</span> <span class="ow">in</span> <span class="n">split_info</span> <span class="k">if</span> <span class="n">age</span><span class="p">}</span>
-
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">info_dict</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Dilmurat&#39;: {&#39;age&#39;: 44, &#39;gender&#39;: &#39;male&#39;}, &#39;Bilal&#39;: {&#39;age&#39;: 25, &#39;gender&#39;: &#39;male&#39;}, &#39;Dina&#39;: {&#39;age&#39;: 1, &#39;gender&#39;: &#39;female&#39;}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input:
+Dilmurat 44 male
+Bilal 25 male
+Dina 1 female
+
+processing 1: list comprehension, string, for-loop
+processing 2: dictionary comprehension, unpacked lists, for-loop
+
+output:
+{&#39;Dilmurat&#39;: {&#39;age&#39;: 44, &#39;gender&#39;: &#39;male&#39;}, &#39;Bilal&#39;: {&#39;age&#39;: 25, &#39;gender&#39;: &#39;male&#39;}, &#39;Dina&#39;: {&#39;age&#39;: 1, &#39;gender&#39;: &#39;female&#39;}}
 </pre></div>
 </div>
 </div>
@@ -536,13 +637,28 @@
 <p>Filter a dictionary based on values</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">:</span> <span class="s1">&#39;male&#39;</span><span class="p">},</span> <span class="s1">&#39;Bilal&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">:</span> <span class="s1">&#39;male&#39;</span><span class="p">},</span> <span class="s1">&#39;Dina&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">:</span> <span class="s1">&#39;female&#39;</span><span class="p">}}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">info_dict</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;processing: list comprehension, dict items, for loop, if condition, dict&#39;</span><span class="p">)</span>
+<span class="n">filter_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filter_dict</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Dilmurat&#39;: {&#39;age&#39;: 44, &#39;gender&#39;: &#39;male&#39;},
- &#39;Bilal&#39;: {&#39;age&#39;: 25, &#39;gender&#39;: &#39;male&#39;}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input:
+{&#39;Dilmurat&#39;: {&#39;age&#39;: 44, &#39;gender&#39;: &#39;male&#39;}, &#39;Bilal&#39;: {&#39;age&#39;: 25, &#39;gender&#39;: &#39;male&#39;}, &#39;Dina&#39;: {&#39;age&#39;: 1, &#39;gender&#39;: &#39;female&#39;}}
+
+processing: list comprehension, dict items, for loop, if condition, dict
+
+output:
+{&#39;Dilmurat&#39;: {&#39;age&#39;: 44, &#39;gender&#39;: &#39;male&#39;}, &#39;Bilal&#39;: {&#39;age&#39;: 25, &#39;gender&#39;: &#39;male&#39;}}
 </pre></div>
 </div>
 </div>
