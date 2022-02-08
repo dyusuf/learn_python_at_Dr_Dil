@@ -204,7 +204,10 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#non-keyword-arguments-args">
-   Non-Keyword Arguments *args
+   Non-Keyword Arguments
+   <em>
+    *args
+   </em>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -216,7 +219,10 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#keyword-arguments-kwargs">
-   Keyword Arguments **kwargs
+   Keyword Arguments
+   <em>
+    **kwargs
+   </em>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -225,6 +231,19 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#order-of-kwargs-args-default-arguments">
+   Order of
+   <em>
+    **kwargs
+   </em>
+   ,
+   <em>
+    *args
+   </em>
+   &amp; Default Arguments
+  </a>
  </li>
 </ul>
 
@@ -248,7 +267,10 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#non-keyword-arguments-args">
-   Non-Keyword Arguments *args
+   Non-Keyword Arguments
+   <em>
+    *args
+   </em>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -260,7 +282,10 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#keyword-arguments-kwargs">
-   Keyword Arguments **kwargs
+   Keyword Arguments
+   <em>
+    **kwargs
+   </em>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -269,6 +294,19 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#order-of-kwargs-args-default-arguments">
+   Order of
+   <em>
+    **kwargs
+   </em>
+   ,
+   <em>
+    *args
+   </em>
+   &amp; Default Arguments
+  </a>
  </li>
 </ul>
 
@@ -281,33 +319,34 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="variable-length-arguments">
 <h1>Variable Length Arguments<a class="headerlink" href="#variable-length-arguments" title="Permalink to this headline">¶</a></h1>
-<p>If you do not know beforehand how many arguments can be passed to your function by the user, you can make functions with variable length arguments.</p>
+<p>If you are not certain how many input arguments can be passed to your function by the user, you can make functions with input of variable length arguments.</p>
 <div class="section" id="non-keyword-arguments-args">
-<h2>Non-Keyword Arguments *args<a class="headerlink" href="#non-keyword-arguments-args" title="Permalink to this headline">¶</a></h2>
+<h2>Non-Keyword Arguments <em>*args</em><a class="headerlink" href="#non-keyword-arguments-args" title="Permalink to this headline">¶</a></h2>
 <p>Use the prefix of <code class="docutils literal notranslate"><span class="pre">*</span></code>,  <em>*args</em> collects all the positional arguments into a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>.</p>
 <div class="section" id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input_type</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect_input</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    print type of input</span>
+<span class="sd">    collects arguments into a tuple</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;type of </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;*input collects arguments into </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 
 
-<span class="n">input_type</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">input_type</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">input_type</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="n">input_type</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+<span class="n">collect_input</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">collect_input</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">collect_input</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">collect_input</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type of (1, 2, 3) is &lt;class &#39;tuple&#39;&gt;
-type of ([1, 2, 3],) is &lt;class &#39;tuple&#39;&gt;
-type of ((1, 2, 3),) is &lt;class &#39;tuple&#39;&gt;
-type of (&#39;123&#39;, &#39;abc&#39;) is &lt;class &#39;tuple&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*input collects arguments into (1, 2, 3).
+*input collects arguments into ([1, 2, 3],).
+*input collects arguments into ((1, 2, 3),).
+*input collects arguments into (&#39;123&#39;, &#39;abc&#39;).
 </pre></div>
 </div>
 </div>
@@ -319,7 +358,7 @@ type of (&#39;123&#39;, &#39;abc&#39;) is &lt;class &#39;tuple&#39;&gt;
 <span class="sd">    sum up the input numbers</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;sum of </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;*num collects arguments into </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> whose sum is </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 
 <span class="n">add</span><span class="p">()</span>
 <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -329,21 +368,21 @@ type of (&#39;123&#39;, &#39;abc&#39;) is &lt;class &#39;tuple&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sum of (): 0
-sum of (1,): 1
-sum of (1, 2): 3
-sum of (10, 20, 30): 60
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*num collects arguments into () whose sum is 0.
+*num collects arguments into (1,) whose sum is 1.
+*num collects arguments into (1, 2) whose sum is 3.
+*num collects arguments into (10, 20, 30) whose sum is 60.
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculateAverage</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getAverage</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">    Calculates the average of n numbers </span>
+<span class="sd">    calculates the average of n numbers </span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    
+        
     <span class="n">input_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">input_len</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
         <span class="c1"># Iterate over all the arguments and calculate average</span>
@@ -351,46 +390,49 @@ sum of (10, 20, 30): 60
     <span class="k">else</span><span class="p">:</span>
         <span class="n">average</span> <span class="o">=</span> <span class="mi">0</span>
         
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;average of </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">average</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;*input collects arguments into </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s1"> whose average is </span><span class="si">{</span><span class="n">average</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>    
 
-<span class="n">calculateAverage</span><span class="p">()</span>
-<span class="n">calculateAverage</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">getAverage</span><span class="p">()</span>
+<span class="n">getAverage</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average of () is 0
-average of (2, 3, 4) is 3.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*input collects arguments into () whose average is 0.
+*input collects arguments into (2, 3, 4) whose average is 3.0.
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_inputs</span><span class="p">(</span><span class="n">startStr</span><span class="p">,</span> <span class="n">endStr</span><span class="p">,</span> <span class="o">*</span><span class="nb">input</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_inputs</span><span class="p">(</span><span class="n">startMsg</span><span class="p">,</span> <span class="n">endMsg</span><span class="p">,</span> <span class="o">*</span><span class="nb">input</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; </span>
 <span class="sd">    print number of input</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-        
-    <span class="nb">print</span><span class="p">(</span><span class="n">startStr</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;*input collects arguments into </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">startMsg</span><span class="p">)</span>
     
     <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;element </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">ele</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;infomation </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">info</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
         
-    <span class="nb">print</span><span class="p">(</span><span class="n">endStr</span><span class="p">)</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="n">endMsg</span><span class="p">)</span>    
 
 <span class="n">print_inputs</span><span class="p">(</span><span class="s1">&#39;~start~&#39;</span><span class="p">,</span> <span class="s1">&#39;~end~&#39;</span><span class="p">,</span> <span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;Bioinformatician&#39;</span><span class="p">,</span> <span class="s1">&#39;Kashgar&#39;</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>~start~
-element 1: Dilmurat
-element 2: 44
-element 3: Bioinformatician
-element 4: Kashgar
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*input collects arguments into (&#39;Dilmurat&#39;, 44, &#39;Bioinformatician&#39;, &#39;Kashgar&#39;)
+~start~
+infomation 1: Dilmurat
+infomation 2: 44
+infomation 3: Bioinformatician
+infomation 4: Kashgar
 ~end~
 </pre></div>
 </div>
@@ -399,29 +441,27 @@ element 4: Kashgar
 </div>
 </div>
 <div class="section" id="keyword-arguments-kwargs">
-<h2>Keyword Arguments **kwargs<a class="headerlink" href="#keyword-arguments-kwargs" title="Permalink to this headline">¶</a></h2>
+<h2>Keyword Arguments <em>**kwargs</em><a class="headerlink" href="#keyword-arguments-kwargs" title="Permalink to this headline">¶</a></h2>
 <p>Use the prefix of <code class="docutils literal notranslate"><span class="pre">**</span></code>,  <em>**kwargs</em> collects all the key:value arguments into a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>.</p>
 <div class="section" id="id1">
 <h3>Examples<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">input_type</span><span class="p">(</span><span class="o">**</span><span class="nb">input</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect_input_dict</span><span class="p">(</span><span class="o">**</span><span class="nb">input</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    print type of input</span>
+<span class="sd">    collect arguments into a dictionary</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;type of </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-
-<span class="n">input_type</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;batur&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="n">input_type</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">44</span><span class="p">,</span> <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;2311&quot;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;**input collects all arguments into </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    
+<span class="n">collect_input_dict</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="s1">&#39;paqa&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;batur&#39;</span><span class="p">)</span>
+<span class="n">collect_input_dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">44</span><span class="p">,</span> <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;2311&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type of {&#39;p&#39;: &#39;paqa&#39;, &#39;a&#39;: &#39;at&#39;, &#39;b&#39;: &#39;batur&#39;} is &lt;class &#39;dict&#39;&gt;
-
-type of {&#39;name&#39;: &#39;Dilmurat&#39;, &#39;age&#39;: 44, &#39;phone&#39;: &#39;2311&#39;} is &lt;class &#39;dict&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**input collects all arguments into {&#39;p&#39;: &#39;paqa&#39;, &#39;a&#39;: &#39;at&#39;, &#39;b&#39;: &#39;batur&#39;}.
+**input collects all arguments into {&#39;name&#39;: &#39;Dilmurat&#39;, &#39;age&#39;: 44, &#39;phone&#39;: &#39;2311&#39;}.
 </pre></div>
 </div>
 </div>
@@ -433,21 +473,79 @@ type of {&#39;name&#39;: &#39;Dilmurat&#39;, &#39;age&#39;: 44, &#39;phone&#39;:
 <span class="sd">    print variable length arguments in key value pair format</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iterate over </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;**input collects all arguments into </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">input</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The person&#39;s </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 
-<span class="n">print_details</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">44</span><span class="p">,</span> <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;2311&quot;</span><span class="p">)</span>
+<span class="n">print_details</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">44</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="s2">&quot;Kashgar&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iterate over {&#39;name&#39;: &#39;Dilmurat&#39;, &#39;age&#39;: 44, &#39;phone&#39;: &#39;2311&#39;}
-name : Dilmurat
-age : 44
-phone : 2311
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**input collects all arguments into {&#39;name&#39;: &#39;Dilmurat&#39;, &#39;age&#39;: 44, &#39;address&#39;: &#39;Kashgar&#39;}.
+The person&#39;s name is Dilmurat.
+The person&#39;s age is 44.
+The person&#39;s address is Kashgar.
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="order-of-kwargs-args-default-arguments">
+<h2>Order of <em>**kwargs</em>, <em>*args</em> &amp; Default Arguments<a class="headerlink" href="#order-of-kwargs-args-default-arguments" title="Permalink to this headline">¶</a></h2>
+<p>Order of arguments in function should be as following:</p>
+<ol class="simple">
+<li><p>Formal Parameter</p></li>
+<li><p><em>*args</em> Arguments</p></li>
+<li><p>Default Arguments</p></li>
+<li><p><em>**kwargs</em> Arguments</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printInfo</span><span class="p">(</span><span class="n">startMsg</span><span class="p">,</span> <span class="n">endMsg</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span> <span class="p">,</span> <span class="n">collegeName</span><span class="o">=</span><span class="s2">&quot;Uni Kashgar&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">    Function that accepts all formal arguments, *args, Default Argumnets &amp; **kwargs </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;startMsg: </span><span class="si">{</span><span class="n">startMsg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;endMsg: </span><span class="si">{</span><span class="n">endMsg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;collegeName: </span><span class="si">{</span><span class="n">collegeName</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;**kwargs: </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;*args: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Use the above arguments to compose the following message:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">startMsg</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The person&#39;s </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The person is realted to </span><span class="si">{</span><span class="s1">&#39; and &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span> <span class="p">)</span>
+    
+   
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">endMsg</span><span class="p">)</span>
+  
+<span class="n">printInfo</span><span class="p">(</span><span class="s2">&quot;~start~&quot;</span><span class="p">,</span> <span class="s2">&quot;~end~&quot;</span> <span class="p">,</span> <span class="s2">&quot;Juret&quot;</span><span class="p">,</span> <span class="s2">&quot;Ümit&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Dilmurat&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">44</span><span class="p">,</span> <span class="n">profession</span><span class="o">=</span><span class="s2">&quot;Bioinformatician&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>startMsg: ~start~
+endMsg: ~end~
+collegeName: Uni Kashgar
+**kwargs: {&#39;name&#39;: &#39;Dilmurat&#39;, &#39;age&#39;: 44, &#39;profession&#39;: &#39;Bioinformatician&#39;}
+*args: (&#39;Juret&#39;, &#39;Ümit&#39;)
+
+Use the above arguments to compose the following message:
+~start~
+The person&#39;s name is Dilmurat.
+The person&#39;s age is 44.
+The person&#39;s profession is Bioinformatician.
+The person is realted to Juret and Ümit.
+~end~
+</pre></div>
 </div>
 </div>
 </div>
