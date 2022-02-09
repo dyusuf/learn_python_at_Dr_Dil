@@ -17,19 +17,13 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-Uyghur_letters = {'p':'paqa', 'b':'béliq', 'e':'eynek'}
-
-# use non-existent keys
-print(Uyghur_letters['ö'])
+printInfo(startMsg="~start dict iteration~", endMsg="~end dict iteration~" , "Juret", "Ümit", name="Dilmurat", age=44, profession="Bioinformatician")
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mKeyError[0m                                  Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1760/2183459671.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      2[0m [0;34m[0m[0m
-[1;32m      3[0m [0;31m# use non-existent keys[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 4[0;31m [0mprint[0m[0;34m([0m[0mUyghur_letters[0m[0;34m[[0m[0;34m'ö'[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;31mKeyError[0m: 'ö'
-KeyError: 'ö'
+[0;36m  File [0;32m"/tmp/ipykernel_1834/4071587685.py"[0;36m, line [0;32m1[0m
+[0;31m    printInfo(startMsg="~start dict iteration~", endMsg="~end dict iteration~" , "Juret", "Ümit", name="Dilmurat", age=44, profession="Bioinformatician")[0m
+[0m                                                                                 ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m positional argument follows keyword argument
+
+SyntaxError: positional argument follows keyword argument (4071587685.py, line 1)
 

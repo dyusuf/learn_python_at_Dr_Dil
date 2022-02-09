@@ -203,11 +203,11 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#non-keyword-arguments-args">
-   Non-Keyword Arguments
+  <a class="reference internal nav-link" href="#args-poisitonal-arguments-of-variable-length">
    <em>
     *args
    </em>
+   : poisitonal arguments of variable length
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -218,11 +218,11 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#keyword-arguments-kwargs">
-   Keyword Arguments
+  <a class="reference internal nav-link" href="#kwargs-key-valuse-arguments-of-variable-length">
    <em>
     **kwargs
    </em>
+   :  key:valuse arguments of variable length
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -266,11 +266,11 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#non-keyword-arguments-args">
-   Non-Keyword Arguments
+  <a class="reference internal nav-link" href="#args-poisitonal-arguments-of-variable-length">
    <em>
     *args
    </em>
+   : poisitonal arguments of variable length
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -281,11 +281,11 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#keyword-arguments-kwargs">
-   Keyword Arguments
+  <a class="reference internal nav-link" href="#kwargs-key-valuse-arguments-of-variable-length">
    <em>
     **kwargs
    </em>
+   :  key:valuse arguments of variable length
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -319,10 +319,14 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="variable-length-arguments">
 <h1>Variable Length Arguments<a class="headerlink" href="#variable-length-arguments" title="Permalink to this headline">¶</a></h1>
-<p>If you are not certain how many input arguments can be passed to your function by the user, you can make functions with input of variable length arguments.</p>
-<div class="section" id="non-keyword-arguments-args">
-<h2>Non-Keyword Arguments <em>*args</em><a class="headerlink" href="#non-keyword-arguments-args" title="Permalink to this headline">¶</a></h2>
-<p>Use the prefix of <code class="docutils literal notranslate"><span class="pre">*</span></code>,  <em>*args</em> collects all the positional arguments into a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>.</p>
+<p>If you are not certain how many input arguments can be passed to your function by the user, you can make functions with input of variable length arguments as following:</p>
+<ul class="simple">
+<li><p><em>*args</em>: use the prefix of <code class="docutils literal notranslate"><span class="pre">*</span></code>.  <em>*args</em> collects all the positional arguments into a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>.</p></li>
+<li><p><em>**kwargs</em>: use the prefix of <code class="docutils literal notranslate"><span class="pre">**</span></code>.  <em>**kwargs</em> collects all the key:value arguments into a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>.</p></li>
+<li><p><strong>iteration</strong>: loop through <code class="docutils literal notranslate"><span class="pre">tuple</span></code> or <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> to process input argumetns</p></li>
+</ul>
+<div class="section" id="args-poisitonal-arguments-of-variable-length">
+<h2><em>*args</em>: poisitonal arguments of variable length<a class="headerlink" href="#args-poisitonal-arguments-of-variable-length" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
@@ -411,7 +415,7 @@
 <span class="sd">    print number of input</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;*input collects arguments into </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;*input collects arguments into </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="n">startMsg</span><span class="p">)</span>
     
@@ -422,27 +426,27 @@
         
     <span class="nb">print</span><span class="p">(</span><span class="n">endMsg</span><span class="p">)</span>    
 
-<span class="n">print_inputs</span><span class="p">(</span><span class="s1">&#39;~start~&#39;</span><span class="p">,</span> <span class="s1">&#39;~end~&#39;</span><span class="p">,</span> <span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;Bioinformatician&#39;</span><span class="p">,</span> <span class="s1">&#39;Kashgar&#39;</span><span class="p">)</span> 
+<span class="n">print_inputs</span><span class="p">(</span><span class="s1">&#39;~start tuple iteration~&#39;</span><span class="p">,</span> <span class="s1">&#39;~end tuple iteration~&#39;</span><span class="p">,</span> <span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;Bioinformatician&#39;</span><span class="p">,</span> <span class="s1">&#39;Kashgar&#39;</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*input collects arguments into (&#39;Dilmurat&#39;, 44, &#39;Bioinformatician&#39;, &#39;Kashgar&#39;)
-~start~
+
+~start tuple iteration~
 infomation 1: Dilmurat
 infomation 2: 44
 infomation 3: Bioinformatician
 infomation 4: Kashgar
-~end~
+~end tuple iteration~
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="keyword-arguments-kwargs">
-<h2>Keyword Arguments <em>**kwargs</em><a class="headerlink" href="#keyword-arguments-kwargs" title="Permalink to this headline">¶</a></h2>
-<p>Use the prefix of <code class="docutils literal notranslate"><span class="pre">**</span></code>,  <em>**kwargs</em> collects all the key:value arguments into a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>.</p>
+<div class="section" id="kwargs-key-valuse-arguments-of-variable-length">
+<h2><em>**kwargs</em>:  key:valuse arguments of variable length<a class="headerlink" href="#kwargs-key-valuse-arguments-of-variable-length" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>Examples<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
@@ -473,19 +477,24 @@ infomation 4: Kashgar
 <span class="sd">    print variable length arguments in key value pair format</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;**input collects all arguments into </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;**input collects all arguments into </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;~start dict iteration~&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">input</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The person&#39;s </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;~end dict iteration~&#39;</span><span class="p">)</span>
+    
 <span class="n">print_details</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">44</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="s2">&quot;Kashgar&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**input collects all arguments into {&#39;name&#39;: &#39;Dilmurat&#39;, &#39;age&#39;: 44, &#39;address&#39;: &#39;Kashgar&#39;}.
+
+~start dict iteration~
 The person&#39;s name is Dilmurat.
 The person&#39;s age is 44.
 The person&#39;s address is Kashgar.
+~end dict iteration~
 </pre></div>
 </div>
 </div>
@@ -515,36 +524,54 @@ The person&#39;s address is Kashgar.
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;*args: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
     <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Use the above arguments to compose the following message:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">startMsg</span><span class="p">)</span>
     
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Use the above arguments to compose the following message:&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">startMsg</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The person&#39;s </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">endMsg</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">()</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The person is realted to </span><span class="si">{</span><span class="s1">&#39; and &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span> <span class="p">)</span>
-    
    
-    
-    <span class="nb">print</span><span class="p">(</span><span class="n">endMsg</span><span class="p">)</span>
   
-<span class="n">printInfo</span><span class="p">(</span><span class="s2">&quot;~start~&quot;</span><span class="p">,</span> <span class="s2">&quot;~end~&quot;</span> <span class="p">,</span> <span class="s2">&quot;Juret&quot;</span><span class="p">,</span> <span class="s2">&quot;Ümit&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Dilmurat&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">44</span><span class="p">,</span> <span class="n">profession</span><span class="o">=</span><span class="s2">&quot;Bioinformatician&quot;</span><span class="p">)</span>
+<span class="n">printInfo</span><span class="p">(</span><span class="s2">&quot;~start dict iteration~&quot;</span><span class="p">,</span> <span class="s2">&quot;~end dict iteration~&quot;</span> <span class="p">,</span> <span class="s2">&quot;Juret&quot;</span><span class="p">,</span> <span class="s2">&quot;Ümit&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Dilmurat&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">44</span><span class="p">,</span> <span class="n">profession</span><span class="o">=</span><span class="s2">&quot;Bioinformatician&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>startMsg: ~start~
-endMsg: ~end~
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>startMsg: ~start dict iteration~
+endMsg: ~end dict iteration~
 collegeName: Uni Kashgar
 **kwargs: {&#39;name&#39;: &#39;Dilmurat&#39;, &#39;age&#39;: 44, &#39;profession&#39;: &#39;Bioinformatician&#39;}
 *args: (&#39;Juret&#39;, &#39;Ümit&#39;)
 
 Use the above arguments to compose the following message:
-~start~
+
+~start dict iteration~
 The person&#39;s name is Dilmurat.
 The person&#39;s age is 44.
 The person&#39;s profession is Bioinformatician.
+~end dict iteration~
+
 The person is realted to Juret and Ümit.
-~end~
+</pre></div>
+</div>
+</div>
+</div>
+<p>The violation of the above order will generate <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">printInfo</span><span class="p">(</span><span class="n">startMsg</span><span class="o">=</span><span class="s2">&quot;~start dict iteration~&quot;</span><span class="p">,</span> <span class="n">endMsg</span><span class="o">=</span><span class="s2">&quot;~end dict iteration~&quot;</span> <span class="p">,</span> <span class="s2">&quot;Juret&quot;</span><span class="p">,</span> <span class="s2">&quot;Ümit&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Dilmurat&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">44</span><span class="p">,</span> <span class="n">profession</span><span class="o">=</span><span class="s2">&quot;Bioinformatician&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_1834/4071587685.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">printInfo</span><span class="p">(</span><span class="n">startMsg</span><span class="o">=</span><span class="s2">&quot;~start dict iteration~&quot;</span><span class="p">,</span> <span class="n">endMsg</span><span class="o">=</span><span class="s2">&quot;~end dict iteration~&quot;</span> <span class="p">,</span> <span class="s2">&quot;Juret&quot;</span><span class="p">,</span> <span class="s2">&quot;Ümit&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Dilmurat&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">44</span><span class="p">,</span> <span class="n">profession</span><span class="o">=</span><span class="s2">&quot;Bioinformatician&quot;</span><span class="p">)</span>
+                                                                                 <span class="o">^</span>
+<span class="ne">SyntaxError</span>: positional argument follows keyword argument
 </pre></div>
 </div>
 </div>
