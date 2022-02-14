@@ -211,18 +211,18 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#an-object">
-     An object
+    <a class="reference internal nav-link" href="#function-is-an-object">
+     Function is an object
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input-argument">
-     Input argument
+    <a class="reference internal nav-link" href="#funcion-as-an-input-argument">
+     Funcion as an input argument
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nested-returned">
-     Nested &amp; Returned
+    <a class="reference internal nav-link" href="#funcion-nested-returned">
+     Funcion: Nested &amp; Returned
     </a>
    </li>
   </ul>
@@ -248,6 +248,13 @@
   <a class="reference internal nav-link" href="#add-arguments-to-decorator">
    Add Arguments to Decorator
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Syntax
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -275,18 +282,18 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#an-object">
-     An object
+    <a class="reference internal nav-link" href="#function-is-an-object">
+     Function is an object
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input-argument">
-     Input argument
+    <a class="reference internal nav-link" href="#funcion-as-an-input-argument">
+     Funcion as an input argument
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nested-returned">
-     Nested &amp; Returned
+    <a class="reference internal nav-link" href="#funcion-nested-returned">
+     Funcion: Nested &amp; Returned
     </a>
    </li>
   </ul>
@@ -312,6 +319,13 @@
   <a class="reference internal nav-link" href="#add-arguments-to-decorator">
    Add Arguments to Decorator
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Syntax
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -324,7 +338,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="decorators">
 <h1>Decorators<a class="headerlink" href="#decorators" title="Permalink to this headline">¶</a></h1>
-<p>A decorator takes a function as input, extends its functionality and returns a new function as output. A decorator changes the behavior of a function without modifying the function itself.</p>
+<p>A decorator takes a function as input, extends its functionality and returns a new function as output. A decorator changes the behavior of a function without modifying the source code of the function.</p>
 <p>Extending functionality is very useful at times when adding extra processing (e.g. logging, timing, etc.) to the function.</p>
 <p>You can also use decorator to run the same code on multiple functions, aviod duplicating code.</p>
 <div class="section" id="the-concepts">
@@ -335,21 +349,21 @@
 <li><p>A function can be <strong>nested</strong>.</p></li>
 <li><p>A function can be <strong>returned</strong> as an output.</p></li>
 </ul>
-<div class="section" id="an-object">
-<h3>An object<a class="headerlink" href="#an-object" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="function-is-an-object">
+<h3>Function is an object<a class="headerlink" href="#function-is-an-object" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good morning&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hi</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hi Dilmurat&#39;</span><span class="p">)</span>    
     
-<span class="n">greeting</span> <span class="o">=</span> <span class="n">morning</span> 
+<span class="n">hi</span> <span class="o">=</span> <span class="n">say_hi</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">morning</span> <span class="ow">is</span> <span class="n">greeting</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hi</span> <span class="ow">is</span> <span class="n">say_hi</span>
 </pre></div>
 </div>
 </div>
@@ -361,96 +375,76 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">morning</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">say_hi</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Good morning
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hi Dilmurat
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hi</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Good morning
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hi Dilmurat
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="input-argument">
-<h3>Input argument<a class="headerlink" href="#input-argument" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="funcion-as-an-input-argument">
+<h3>Funcion as an input argument<a class="headerlink" href="#funcion-as-an-input-argument" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     <span class="n">func</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dilmurat&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;good morning&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">morning</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good morning&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>    
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hi Dilmurat&#39;</span><span class="p">)</span>    
     
-<span class="n">say_hi</span><span class="p">(</span><span class="n">morning</span><span class="p">)</span>    
+<span class="n">morning</span><span class="p">(</span><span class="n">say_hi</span><span class="p">)</span>    
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Good morning Dilmurat
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hi Dilmurat
+good morning
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="nested-returned">
-<h3>Nested &amp; Returned<a class="headerlink" href="#nested-returned" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="funcion-nested-returned">
+<h3>Funcion: Nested &amp; Returned<a class="headerlink" href="#funcion-nested-returned" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     
-    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span> <span class="c1"># an inner function</span>
         <span class="n">func</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dilmurat&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;good morning&quot;</span><span class="p">)</span>
                 
-    <span class="k">return</span> <span class="n">inner_func</span>   
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
 
-<span class="k">def</span> <span class="nf">morning</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good morning&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hi Dilmurat&#39;</span><span class="p">)</span> 
     
-<span class="k">def</span> <span class="nf">evening</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good evening&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>    
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span> <span class="o">=</span> <span class="n">say_hi</span><span class="p">(</span><span class="n">morning</span><span class="p">)</span>
+<span class="n">say_hi</span> <span class="o">=</span> <span class="n">morning</span><span class="p">(</span><span class="n">say_hi</span><span class="p">)</span>
 
-<span class="n">greeting</span><span class="p">()</span>
+<span class="n">say_hi</span><span class="p">()</span>    
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Good morning Dilmurat
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span> <span class="o">=</span> <span class="n">say_hi</span><span class="p">(</span><span class="n">evening</span><span class="p">)</span>
-
-<span class="n">greeting</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Good evening Dilmurat
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hi Dilmurat
+good morning
 </pre></div>
 </div>
 </div>
@@ -465,44 +459,57 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span> <span class="c1"># an inner function</span>
+        
         <span class="c1"># add processes  before func()</span>
+        
         <span class="n">func</span><span class="p">()</span>
+        
         <span class="c1"># add processes after func()</span>
         
-    <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s revisit the above say_hi() exmple and annotate each step in the context of a decorator.</p>
+<p>Let’s revisit the above <code class="docutils literal notranslate"><span class="pre">say_hi()</span></code> exmple and annotate each step in the context of a decorator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">func</span><span class="p">):</span> 
-
-    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span> <span class="c1"># a wrapper</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# say_hi is a decorator&quot;</span><span class="p">)</span>
-        <span class="n">func</span><span class="p">(),</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# output after executing the input: </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">()&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;# output added by inn_func() of say_hi()&quot;</span><span class="p">)</span>
-                
-    <span class="k">return</span> <span class="n">inner_func</span>   
-
-<span class="k">def</span> <span class="nf">morning</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good morning&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     
-<span class="c1"># use morning as the input</span>
-<span class="c1"># a decorator (say_hi) can add a new process to morning()</span>
-<span class="c1"># without changing the source code of morning()</span>
-<span class="n">greeting</span> <span class="o">=</span> <span class="n">say_hi</span><span class="p">(</span><span class="n">morning</span><span class="p">)</span> 
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span> <span class="c1"># an inner function</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;~~ morning() starts decorating ~~~&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# output after calling the input function -- </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">()&quot;</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">()</span>
+        
+        <span class="nb">print</span><span class="p">()</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# output added by wrapper() in morning()&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;good morning&quot;</span><span class="p">)</span>
+                
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
 
-<span class="n">greeting</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hi Dilmurat&#39;</span><span class="p">)</span> 
+
+<span class="c1"># use say_hi as the input of morning()</span>
+<span class="c1"># morning() can add a new process to say_hi()</span>
+<span class="c1"># without changing the source code of say_hi()</span>
+<span class="n">say_hi</span> <span class="o">=</span> <span class="n">morning</span><span class="p">(</span><span class="n">say_hi</span><span class="p">)</span> 
+
+<span class="n">say_hi</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># say_hi is a decorator
-Good morning # output after executing the input: morning()
-Dilmurat # output added by inn_func() of say_hi()
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>~~ morning() starts decorating ~~~
+
+# output after calling the input function -- say_hi()
+hi Dilmurat
+
+# output added by wrapper() in morning()
+good morning
 </pre></div>
 </div>
 </div>
@@ -515,18 +522,23 @@ Dilmurat # output added by inn_func() of say_hi()
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
-        <span class="c1"># add processes  before func()</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span> <span class="c1"># an inner function</span>
+        <span class="c1"># add processes before func()</span>
         <span class="n">func</span><span class="p">()</span>
         <span class="c1"># add processes after func()</span>
         
-    <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
 
 <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
     <span class="c1"># do somthing</span>
     <span class="k">pass</span>
 
-<span class="n">extend_func</span> <span class="o">=</span> <span class="n">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="n">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="c1"># output is wrapper in decorator()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.decorator.&lt;locals&gt;.wrapper()&gt;
 </pre></div>
 </div>
 </div>
@@ -536,105 +548,67 @@ Dilmurat # output added by inn_func() of say_hi()
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
-        <span class="c1"># add processes  before func()</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span> <span class="c1"># an inner function</span>
+        
+        <span class="c1"># add processes before func()</span>
+        
         <span class="n">func</span><span class="p">()</span>
+        
         <span class="c1"># add processes after func()</span>
         
-    <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
 
 <span class="c1"># the fllowing code equivalent to &#39;func = decorator(func)&#39;</span>
 <span class="nd">@decorator</span>
 <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
     <span class="c1"># do somthing</span>
     <span class="k">pass</span>
+
+<span class="n">func</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.decorator.&lt;locals&gt;.wrapper()&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<p>The syntactic sugar with the say_hi() example.</p>
+<p>The syntactic sugar with the <code class="docutils literal notranslate"><span class="pre">say_hi()</span></code> examplee.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">func</span><span class="p">):</span> 
-
-    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span> <span class="c1"># a wrapper</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# say_hi is a decorator&quot;</span><span class="p">)</span>
-        <span class="n">func</span><span class="p">(),</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# output after executing the input: </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">()&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;# output added by inn_func() of say_hi()&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span> <span class="c1"># an inner function</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;~~ morning() starts decorating ~~~&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# output after calling the input function -- </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">()&quot;</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">()</span>
+        
+        <span class="nb">print</span><span class="p">()</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# output added by wrapper() in morning()&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;good morning&quot;</span><span class="p">)</span>
                 
-    <span class="k">return</span> <span class="n">inner_func</span>   
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
 
-<span class="c1"># this equivalent to &#39;morning = say_hi(morning)&#39;</span>
-<span class="nd">@say_hi</span>
-<span class="k">def</span> <span class="nf">morning</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good morning&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="c1"># the fllowing code equivalent to &#39;say_hi = morning(say_hi)&#39;</span>
+<span class="nd">@morning</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hi Dilmurat&#39;</span><span class="p">)</span> 
 
-<span class="c1"># this equivalent to &#39;evening = say_hi(evening)&#39;   </span>
-<span class="nd">@say_hi</span>
-<span class="k">def</span> <span class="nf">evening</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good evening&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">morning</span><span class="p">()</span>
+<span class="n">say_hi</span><span class="p">()</span>    
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># say_hi is a decorator
-Good morning # output after executing the input: morning()
-Dilmurat # output added by inn_func() of say_hi()
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evening</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># say_hi is a decorator
-Good evening # output after executing the input: evening()
-Dilmurat # output added by inn_func() of say_hi()
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s repeat the above example with the traditional way:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">func</span><span class="p">):</span> 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>~~ morning() starts decorating ~~~
 
-    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span> <span class="c1"># a wrapper</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# say_hi is a decorator&quot;</span><span class="p">)</span>
-        <span class="n">func</span><span class="p">(),</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# output after executing the input: </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">()&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;# output added by inn_func() of say_hi()&quot;</span><span class="p">)</span>
-                
-    <span class="k">return</span> <span class="n">inner_func</span>   
+# output after calling the input function -- say_hi()
+hi Dilmurat
 
-<span class="k">def</span> <span class="nf">morning</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good morning&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-
-<span class="n">morning</span> <span class="o">=</span> <span class="n">say_hi</span><span class="p">(</span><span class="n">morning</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">morning</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># say_hi is a decorator
-Good morning # output after executing the input: morning()
-Dilmurat # output added by inn_func() of say_hi()
+# output added by wrapper() in morning()
+good morning
 </pre></div>
 </div>
 </div>
@@ -642,67 +616,36 @@ Dilmurat # output added by inn_func() of say_hi()
 <p>Let’s use multiple decorators:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">func</span><span class="p">):</span> 
-
-    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span> <span class="c1"># a wrapper</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span> <span class="c1"># an inner function</span>
         <span class="n">func</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;good morning&quot;</span><span class="p">)</span>
                 
-    <span class="k">return</span> <span class="n">inner_func</span>   
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
 
 <span class="k">def</span> <span class="nf">weather</span><span class="p">(</span><span class="n">func</span><span class="p">):</span> 
 
-    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span> <span class="c1"># a wrapper</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span><span class="c1"># an inner function</span>
         <span class="n">func</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The weather is great today :)&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a great weather today :)&#39;</span><span class="p">)</span>
                 
-    <span class="k">return</span> <span class="n">inner_func</span>   
+    <span class="k">return</span> <span class="n">wrapper</span>   
 
-<span class="k">def</span> <span class="nf">morning</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good morning&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-
-<span class="c1"># this equivalent to &#39;morning = weather(say_hi(morning))&#39;</span>
+<span class="c1"># this equivalent to &#39;say_hi = weather(morning(say_hi))&#39;</span>
 <span class="nd">@weather</span>
-<span class="nd">@say_hi</span>
-<span class="k">def</span> <span class="nf">morning</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good morning&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>    
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">morning</span><span class="p">()</span>
+<span class="nd">@morning</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hi Dilmurat&#39;</span><span class="p">)</span>     
+    
+<span class="n">say_hi</span><span class="p">()</span>    
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Good morning Dilmurat
-The weather is great today :)
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s repeat the above example with the traditional way:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good morning&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-
-<span class="n">morning</span> <span class="o">=</span> <span class="n">weather</span><span class="p">(</span><span class="n">say_hi</span><span class="p">(</span><span class="n">morning</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">morning</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Good morning Dilmurat
-The weather is great today :)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hi Dilmurat
+good morning
+a great weather today :)
 </pre></div>
 </div>
 </div>
@@ -711,6 +654,104 @@ The weather is great today :)
 </div>
 <div class="section" id="add-arguments-to-decorator">
 <h2>Add Arguments to Decorator<a class="headerlink" href="#add-arguments-to-decorator" title="Permalink to this headline">¶</a></h2>
+<p>To ad arguments to decorator, we can give <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">*kwargs</span></code> to wrapper function as the inputs.</p>
+<div class="section" id="id1">
+<h3>Syntax<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># set *args, **kwargs</span>
+        <span class="c1"># add processes  before func()</span>
+        <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="c1"># set *args, **kwargs</span>
+        <span class="c1"># add processes after func()</span>
+        
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@decorator</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span> <span class="c1"># arg --&gt; decorator --&gt; wrapper --&gt; func(*args, **kwargs)</span>
+    <span class="c1"># do somthing</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s use the use <code class="docutils literal notranslate"><span class="pre">say_hi()</span></code> examplee</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># an inner function</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;~~arguments~~&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;args:</span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kwargs:</span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;~~arguments~~&quot;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">()</span>
+             
+        <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;good morning&quot;</span><span class="p">)</span>
+                
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
+
+<span class="nd">@morning</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hi </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>     
+      
+<span class="n">say_hi</span><span class="p">(</span><span class="s1">&#39;Nijat&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>~~arguments~~
+args:(&#39;Nijat&#39;,)
+kwargs:{}
+~~arguments~~
+
+hi Nijat
+good morning
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># an inner function</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;~~arguments~~&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;args:</span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kwargs:</span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;~~arguments~~&quot;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">()</span>
+       
+        <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;good morning&quot;</span><span class="p">)</span>
+                
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
+
+<span class="nd">@morning</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hi </span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+      
+<span class="n">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="o">=</span><span class="s2">&quot;Ilham&quot;</span><span class="p">,</span> <span class="n">name2</span><span class="o">=</span><span class="s2">&quot;Anwer&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>~~arguments~~
+args:()
+kwargs:{&#39;name1&#39;: &#39;Ilham&#39;, &#39;name2&#39;: &#39;Anwer&#39;}
+~~arguments~~
+
+Hi Ilham and Anwer
+good morning
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
