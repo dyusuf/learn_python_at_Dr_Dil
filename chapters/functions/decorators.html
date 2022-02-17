@@ -256,6 +256,37 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#returning-values-from-decorated-functions">
+   Returning Values From Decorated Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preseve-metadata-with-wraps-from-functools">
+   Preseve metadata with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     @wraps
+    </span>
+   </code>
+   from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     functools
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-the-original-function-with-wrapped">
+   Access the original function with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     __wrapped__
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -326,6 +357,37 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#returning-values-from-decorated-functions">
+   Returning Values From Decorated Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preseve-metadata-with-wraps-from-functools">
+   Preseve metadata with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     @wraps
+    </span>
+   </code>
+   from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     functools
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-the-original-function-with-wrapped">
+   Access the original function with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     __wrapped__
+    </span>
+   </code>
+  </a>
  </li>
 </ul>
 
@@ -749,6 +811,217 @@ Hi Ilham and Anwer
 good morning
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="returning-values-from-decorated-functions">
+<h2>Returning Values From Decorated Functions<a class="headerlink" href="#returning-values-from-decorated-functions" title="Permalink to this headline">¶</a></h2>
+<p>How to decorate a function that returns a value?</p>
+<p>Let’s modify the above example, make the <code class="docutils literal notranslate"><span class="pre">say_hi()</span></code> function return a value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># an inner function   </span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The output does not show returned value from func(*args, **kwargs).&quot;</span><span class="p">)</span>
+         <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="c1"># the resturned value from func() is not explicitly returned by wrapper</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The output only shows: &#39;good morning&#39;&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
+
+<span class="nd">@morning</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hi </span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># here instead of &#39;print&#39; I &#39;return&#39; the string </span>
+    
+<span class="c1"># </span>
+<span class="n">greeting_msg</span> <span class="o">=</span> <span class="n">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="o">=</span><span class="s2">&quot;Ilham&quot;</span><span class="p">,</span> <span class="n">name2</span><span class="o">=</span><span class="s2">&quot;Anwer&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;decorated say_hi() returns&#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">greeting_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The output does not show returned value from func(*args, **kwargs).
+The output only shows: &#39;good morning&#39;
+
+decorated say_hi() returns None
+</pre></div>
+</div>
+</div>
+</div>
+<p>After the decoration, <code class="docutils literal notranslate"><span class="pre">say_hi((name1=&quot;Ilham&quot;,</span> <span class="pre">name2=&quot;Anwer&quot;)</span></code> returns <code class="docutils literal notranslate"><span class="pre">None</span></code> instead of <code class="docutils literal notranslate"><span class="pre">Hi</span> <span class="pre">Ilham</span> <span class="pre">and</span> <span class="pre">Anwer</span></code>. To fix it, wrapper needs to exlicitly returns the output from <code class="docutils literal notranslate"><span class="pre">func(*args,</span> <span class="pre">**kwargs)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># an inner function   </span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;good morning&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">greeting</span> <span class="c1"># here I return a value obtained from func(*args, **kwargs)</span>
+    
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
+
+<span class="nd">@morning</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hi </span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># here instead of &#39;print&#39; I &#39;return&#39; the string </span>
+    
+<span class="c1"># </span>
+<span class="n">greeting_msg</span> <span class="o">=</span> <span class="n">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="o">=</span><span class="s2">&quot;Ilham&quot;</span><span class="p">,</span> <span class="n">name2</span><span class="o">=</span><span class="s2">&quot;Anwer&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">greeting_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>good morning
+Hi Ilham and Anwer
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can inject ‘good morning’ in the value of <code class="docutils literal notranslate"><span class="pre">greeting</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># an inner function   </span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2">, good morning.&quot;</span> 
+        
+        <span class="k">return</span> <span class="n">greeting</span> <span class="c1"># here I return a value from the inner function</span>
+    
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
+
+<span class="nd">@morning</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hi </span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># here instead of &#39;print&#39; I &#39;return&#39; the string </span>
+    
+<span class="c1"># </span>
+<span class="n">greeting_msg</span> <span class="o">=</span> <span class="n">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="o">=</span><span class="s2">&quot;Ilham&quot;</span><span class="p">,</span> <span class="n">name2</span><span class="o">=</span><span class="s2">&quot;Anwer&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">greeting_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hi Ilham and Anwer, good morning.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="preseve-metadata-with-wraps-from-functools">
+<h2>Preseve metadata with <code class="docutils literal notranslate"><span class="pre">&#64;wraps</span></code> from <code class="docutils literal notranslate"><span class="pre">functools</span></code><a class="headerlink" href="#preseve-metadata-with-wraps-from-functools" title="Permalink to this headline">¶</a></h2>
+<p>Suppose I add a doc string to the say_hi(), and after the decoration, want to access its name and doc string as following.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># an inner function   </span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2">, good morning.&quot;</span> 
+        
+        <span class="k">return</span> <span class="n">greeting</span> <span class="c1"># here I return a value from the inner function</span>
+    
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
+
+<span class="nd">@morning</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A function to say hi&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hi </span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># here instead of &#39;print&#39; I &#39;return&#39; the string </span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;func name:&#39;</span><span class="p">,</span> <span class="n">say_hi</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;func doc:&#39;</span><span class="p">,</span> <span class="n">say_hi</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>func name: wrapper
+func doc: None
+</pre></div>
+</div>
+</div>
+</div>
+<p>The metadata of <code class="docutils literal notranslate"><span class="pre">say_hi()</span></code> is lost. To fix this, use <code class="docutils literal notranslate"><span class="pre">&#64;wraps</span></code> decorator from the <code class="docutils literal notranslate"><span class="pre">functools</span></code> library as following.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+
+<span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="c1"># use wraps here</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># an inner function   </span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2">, good morning.&quot;</span> 
+        
+        <span class="k">return</span> <span class="n">greeting</span> <span class="c1"># here I return a value from the inner function</span>
+    
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
+
+<span class="nd">@morning</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A function to say hi&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hi </span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># here instead of &#39;print&#39; I &#39;return&#39; the string </span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;func name:&#39;</span><span class="p">,</span> <span class="n">say_hi</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;func doc:&#39;</span><span class="p">,</span> <span class="n">say_hi</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>func name: say_hi
+func doc: A function to say hi
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="access-the-original-function-with-wrapped">
+<h2>Access the original function with <code class="docutils literal notranslate"><span class="pre">__wrapped__</span></code><a class="headerlink" href="#access-the-original-function-with-wrapped" title="Permalink to this headline">¶</a></h2>
+<p>If you want to access the original function before the decoration, use the <code class="docutils literal notranslate"><span class="pre">__wrapped__</span></code> attribute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+
+<span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="c1"># use wraps here</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># an inner function   </span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2">, good morning.&quot;</span> 
+        
+        <span class="k">return</span> <span class="n">greeting</span> <span class="c1"># here I return a value from the inner function</span>
+    
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
+
+<span class="nd">@morning</span>
+<span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A function to say hi&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hi </span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># here instead of &#39;print&#39; I &#39;return&#39; the string </span>
+
+<span class="n">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="o">=</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="n">name2</span><span class="o">=</span><span class="s1">&#39;Bilal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hi Dilmurat and Bilal, good morning.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">say_hi</span><span class="o">.</span><span class="n">__wrapped__</span><span class="p">(</span><span class="n">name1</span><span class="o">=</span><span class="s1">&#39;Dilmurat&#39;</span><span class="p">,</span> <span class="n">name2</span><span class="o">=</span><span class="s1">&#39;Bilal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hi Dilmurat and Bilal&#39;
+</pre></div>
 </div>
 </div>
 </div>
