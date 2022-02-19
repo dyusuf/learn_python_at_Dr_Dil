@@ -287,6 +287,11 @@
    </code>
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-decorator-in-action">
+   Python Decorator in Action
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -387,6 +392,11 @@
      __wrapped__
     </span>
    </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-decorator-in-action">
+   Python Decorator in Action
   </a>
  </li>
 </ul>
@@ -818,50 +828,14 @@ good morning
 <div class="section" id="returning-values-from-decorated-functions">
 <h2>Returning Values From Decorated Functions<a class="headerlink" href="#returning-values-from-decorated-functions" title="Permalink to this headline">¶</a></h2>
 <p>How to decorate a function that returns a value?</p>
-<p>Let’s modify the above example, make the <code class="docutils literal notranslate"><span class="pre">say_hi()</span></code> function return a value:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># an inner function   </span>
-         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The output does not show returned value from func(*args, **kwargs).&quot;</span><span class="p">)</span>
-         <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="c1"># the resturned value from func() is not explicitly returned by wrapper</span>
-         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The output only shows: &#39;good morning&#39;&quot;</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
-
-<span class="nd">@morning</span>
-<span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">):</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hi </span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># here instead of &#39;print&#39; I &#39;return&#39; the string </span>
-    
-<span class="c1"># </span>
-<span class="n">greeting_msg</span> <span class="o">=</span> <span class="n">say_hi</span><span class="p">(</span><span class="n">name1</span><span class="o">=</span><span class="s2">&quot;Ilham&quot;</span><span class="p">,</span> <span class="n">name2</span><span class="o">=</span><span class="s2">&quot;Anwer&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;decorated say_hi() returns&#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">greeting_msg</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The output does not show returned value from func(*args, **kwargs).
-The output only shows: &#39;good morning&#39;
-
-decorated say_hi() returns None
-</pre></div>
-</div>
-</div>
-</div>
-<p>After the decoration, <code class="docutils literal notranslate"><span class="pre">say_hi((name1=&quot;Ilham&quot;,</span> <span class="pre">name2=&quot;Anwer&quot;)</span></code> returns <code class="docutils literal notranslate"><span class="pre">None</span></code> instead of <code class="docutils literal notranslate"><span class="pre">Hi</span> <span class="pre">Ilham</span> <span class="pre">and</span> <span class="pre">Anwer</span></code>. To fix it, wrapper needs to exlicitly returns the output from <code class="docutils literal notranslate"><span class="pre">func(*args,</span> <span class="pre">**kwargs)</span></code>.</p>
+<p>Let’s modify the above example, make the <code class="docutils literal notranslate"><span class="pre">say_hi()</span></code> function return a value as following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     
     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># an inner function   </span>
         <span class="n">greeting</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;good morning&quot;</span><span class="p">)</span>
-        
-        <span class="k">return</span> <span class="n">greeting</span> <span class="c1"># here I return a value obtained from func(*args, **kwargs)</span>
+        <span class="n">greeting</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2">, good morning.&quot;</span> 
     
     <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># the output of morning() is the inner function</span>
 
@@ -877,13 +851,12 @@ decorated say_hi() returns None
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>good morning
-Hi Ilham and Anwer
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
 </div>
 </div>
-<p>You can inject ‘good morning’ in the value of <code class="docutils literal notranslate"><span class="pre">greeting</span></code>.</p>
+<p>The decorated function returns <code class="docutils literal notranslate"><span class="pre">None</span></code>. In this case, we need to explicitly <code class="docutils literal notranslate"><span class="pre">return</span></code> value from <code class="docutils literal notranslate"><span class="pre">wrapper</span></code> in the decorator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
@@ -916,7 +889,7 @@ Hi Ilham and Anwer
 </div>
 <div class="section" id="preseve-metadata-with-wraps-from-functools">
 <h2>Preseve metadata with <code class="docutils literal notranslate"><span class="pre">&#64;wraps</span></code> from <code class="docutils literal notranslate"><span class="pre">functools</span></code><a class="headerlink" href="#preseve-metadata-with-wraps-from-functools" title="Permalink to this headline">¶</a></h2>
-<p>Suppose I add a doc string to the say_hi(), and after the decoration, want to access its name and doc string as following.</p>
+<p>Suppose I add a doc string to the say_hi(), and after the decoration, want to access its name and doc string as following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">morning</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
@@ -1021,6 +994,126 @@ func doc: A function to say hi
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hi Dilmurat and Bilal&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="python-decorator-in-action">
+<h2>Python Decorator in Action<a class="headerlink" href="#python-decorator-in-action" title="Permalink to this headline">¶</a></h2>
+<p>Here I show a decorator example for measuring the performance (time and memory usage) of list generation using four methods: <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">conversion</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">comprehension</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">append</span></code>, and <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">concatenation</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">import</span> <span class="nn">tracemalloc</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">perf_counter</span> 
+
+<span class="k">def</span> <span class="nf">benchmark</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;benchmark a function&#39;&#39;&#39;</span>
+
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        
+        <span class="c1"># start tracking memory usage</span>
+        <span class="n">tracemalloc</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="c1"># start the timing</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
+        
+        <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        
+        <span class="c1"># measure the elapsed time </span>
+        <span class="n">finish_time</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
+        <span class="n">elapse_time</span> <span class="o">=</span> <span class="n">finish_time</span> <span class="o">-</span> <span class="n">start_time</span>
+        
+        <span class="c1"># get the meory usage</span>
+        <span class="n">current</span><span class="p">,</span> <span class="n">peak</span> <span class="o">=</span> <span class="n">tracemalloc</span><span class="o">.</span><span class="n">get_traced_memory</span><span class="p">()</span>
+        <span class="n">tracemalloc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+     
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Function: </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Method: </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;args: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kwargs: </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current memory usage: </span><span class="si">{</span><span class="n">current</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> MB&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Peak memory usage: </span><span class="si">{</span><span class="n">peak</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> MB&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Time elapsed is seconds: </span><span class="si">{</span><span class="n">elapse_time</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> seconds&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="s2">&quot;~&quot;</span><span class="o">*</span><span class="mi">40</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="nd">@benchmark</span>
+<span class="k">def</span> <span class="nf">list_convert</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;list(range(num))&#39;&#39;&#39;</span>
+
+    <span class="n">my_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+
+
+<span class="nd">@benchmark</span>
+<span class="k">def</span> <span class="nf">list_compreh</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;[l for l in range(num)]&#39;&#39;&#39;</span>
+
+    <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)]</span>
+
+
+<span class="nd">@benchmark</span>
+<span class="k">def</span> <span class="nf">list_append</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;my_list.append(item)&#39;&#39;&#39;</span>
+
+    <span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+        <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+
+<span class="nd">@benchmark</span>
+<span class="k">def</span> <span class="nf">list_concat</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;my_list = my_list + [item]&#39;&#39;&#39;</span>
+
+    <span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+        <span class="n">my_list</span> <span class="o">=</span> <span class="n">my_list</span> <span class="o">+</span> <span class="p">[</span><span class="n">item</span><span class="p">]</span>
+
+<span class="n">list_convert</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">list_compreh</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">list_append</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">list_concat</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Function: list_convert
+Method: list(range(num))
+args: ()
+kwargs: {&#39;num&#39;: 10000}
+Current memory usage: 0.000424 MB
+Peak memory usage: 0.353416 MB
+Time elapsed is seconds: 0.004722 seconds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Function: list_compreh
+Method: [l for l in range(num)]
+args: ()
+kwargs: {&#39;num&#39;: 10000}
+Current memory usage: 0.000848 MB
+Peak memory usage: 0.361404 MB
+Time elapsed is seconds: 0.003910 seconds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Function: list_append
+Method: my_list.append(item)
+args: ()
+kwargs: {&#39;num&#39;: 10000}
+Current memory usage: 0.000440 MB
+Peak memory usage: 0.360860 MB
+Time elapsed is seconds: 0.004273 seconds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Function: list_concat
+Method: my_list = my_list + [item]
+args: ()
+kwargs: {&#39;num&#39;: 10000}
+Current memory usage: 0.000905 MB
+Peak memory usage: 0.433765 MB
+Time elapsed is seconds: 0.156729 seconds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 </pre></div>
 </div>
 </div>
