@@ -1115,12 +1115,6 @@ func doc: A function to say hi
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_convert</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="n">list_compreh</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="n">list_append</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="n">list_concat</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1129,41 +1123,69 @@ func doc: A function to say hi
 Method: list(range(num))
 args: ()
 kwargs: {&#39;num&#39;: 100000}
+Current memory usage: 0.002753 MB
+Peak memory usage: 3.595697 MB
+Time elapsed: 0.042046 seconds
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current memory usage: 0.003652 MB
-Peak memory usage: 3.596624 MB
-Time elapsed: 0.037787 seconds
-
-Function: list_compreh
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_compreh</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Function: list_compreh
 Method: [l for l in range(num)]
 args: ()
 kwargs: {&#39;num&#39;: 100000}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current memory usage: 0.003637 MB
-Peak memory usage: 3.620925 MB
-Time elapsed: 0.035843 seconds
-
-Function: list_append
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current memory usage: 0.001429 MB
+Peak memory usage: 3.619276 MB
+Time elapsed: 0.041021 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_append</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Function: list_append
 Method: list_num.append(item)
 args: ()
 kwargs: {&#39;num&#39;: 100000}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current memory usage: 0.001460 MB
-Peak memory usage: 3.618728 MB
-Time elapsed: 0.041480 seconds
-
-Function: list_concat
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current memory usage: 0.002998 MB
+Peak memory usage: 3.619672 MB
+Time elapsed: 0.044083 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_concat</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Function: list_concat
 Method: list_num = list_num + [item]
 args: ()
 kwargs: {&#39;num&#39;: 100000}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current memory usage: 0.000873 MB
-Peak memory usage: 4.393741 MB
-Time elapsed: 16.478581 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current memory usage: 0.000733 MB
+Peak memory usage: 4.393601 MB
+Time elapsed: 17.929004 seconds
 </pre></div>
 </div>
 </div>
