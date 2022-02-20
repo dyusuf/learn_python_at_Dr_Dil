@@ -1024,8 +1024,6 @@ func doc: A function to say hi
         
         <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
-        
     <span class="k">return</span> <span class="n">wrapper</span>
 
 <span class="c1"># benchmark memory usage</span>
@@ -1048,9 +1046,7 @@ func doc: A function to say hi
         
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current memory usage: </span><span class="si">{</span><span class="n">current</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> MB&#39;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Peak memory usage: </span><span class="si">{</span><span class="n">peak</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> MB&#39;</span><span class="p">)</span>
-        
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
-           
+             
     <span class="k">return</span> <span class="n">wrapper</span>
 
 <span class="c1"># benchmark time usage</span>
@@ -1072,10 +1068,9 @@ func doc: A function to say hi
         <span class="n">elapse_time</span> <span class="o">=</span> <span class="n">finish_time</span> <span class="o">-</span> <span class="n">start_time</span>
         
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Time elapsed: </span><span class="si">{</span><span class="n">elapse_time</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> seconds&#39;</span><span class="p">)</span>
-        
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
-  
+   
     <span class="k">return</span> <span class="n">wrapper</span>
+
 
 <span class="nd">@benchmark_time</span>
 <span class="nd">@benchmark_memo</span>
@@ -1133,17 +1128,14 @@ func doc: A function to say hi
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Function: list_convert
-Method: list(range(num))
-args: ()
-kwargs: {&#39;num&#39;: 100000}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------
-Current memory usage: 0.004948 MB
-Peak memory usage: 3.601196 MB
-----------------------------------------
-Time elapsed: 0.043967 seconds
-----------------------------------------
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Method: list(range(num))
+args: ()
+kwargs: {&#39;num&#39;: 100000}
+Current memory usage: 0.004422 MB
+Peak memory usage: 3.601436 MB
+Time elapsed: 0.047600 seconds
 
 Function: list_compreh
 Method: [l for l in range(num)]
@@ -1151,12 +1143,9 @@ args: ()
 kwargs: {&#39;num&#39;: 100000}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------
-Current memory usage: 0.002452 MB
-Peak memory usage: 3.619248 MB
-----------------------------------------
-Time elapsed: 0.048212 seconds
-----------------------------------------
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current memory usage: 0.001932 MB
+Peak memory usage: 3.619256 MB
+Time elapsed: 0.045045 seconds
 
 Function: list_append
 Method: list_num.append(item)
@@ -1164,12 +1153,9 @@ args: ()
 kwargs: {&#39;num&#39;: 100000}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------
-Current memory usage: 0.001721 MB
-Peak memory usage: 3.618381 MB
-----------------------------------------
-Time elapsed: 0.051082 seconds
-----------------------------------------
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current memory usage: 0.001071 MB
+Peak memory usage: 3.618339 MB
+Time elapsed: 0.046644 seconds
 
 Function: list_concat
 Method: list_num = list_num + [item]
@@ -1177,12 +1163,9 @@ args: ()
 kwargs: {&#39;num&#39;: 100000}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------
-Current memory usage: 0.001481 MB
-Peak memory usage: 4.393741 MB
-----------------------------------------
-Time elapsed: 23.461572 seconds
-----------------------------------------
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current memory usage: 0.000815 MB
+Peak memory usage: 4.393683 MB
+Time elapsed: 23.105892 seconds
 </pre></div>
 </div>
 </div>
