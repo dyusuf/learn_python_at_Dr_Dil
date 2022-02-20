@@ -1008,14 +1008,60 @@ func doc: A function to say hi
 <span class="kn">import</span> <span class="nn">tracemalloc</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">perf_counter</span> 
 
-<span class="k">def</span> <span class="nf">benchmark</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;benchmark a function&#39;&#39;&#39;</span>
-
+<span class="c1"># print function info</span>
+<span class="k">def</span> <span class="nf">print_funk_info</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    A decorator:</span>
+<span class="sd">    print the metadata of the input function</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
     <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Function: </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Method: </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;args: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kwargs: </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         
+        <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="c1"># benchmark memory usage</span>
+<span class="k">def</span> <span class="nf">benchmark_memo</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    A decorator:</span>
+<span class="sd">    benchmark the memory usage of the input function</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="c1"># start tracking memory usage</span>
         <span class="n">tracemalloc</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        
+        <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        
+        <span class="c1"># get the meory usage</span>
+        <span class="n">current</span><span class="p">,</span> <span class="n">peak</span> <span class="o">=</span> <span class="n">tracemalloc</span><span class="o">.</span><span class="n">get_traced_memory</span><span class="p">()</span>
+        <span class="n">tracemalloc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current memory usage: </span><span class="si">{</span><span class="n">current</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> MB&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Peak memory usage: </span><span class="si">{</span><span class="n">peak</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> MB&#39;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+           
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="c1"># benchmark time usage</span>
+<span class="k">def</span> <span class="nf">benchmark_time</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    A decorator:</span>
+<span class="sd">    benchmark the time usage of the input function</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="c1"># start the timing</span>
         <span class="n">start_time</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
         
@@ -1025,57 +1071,63 @@ func doc: A function to say hi
         <span class="n">finish_time</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
         <span class="n">elapse_time</span> <span class="o">=</span> <span class="n">finish_time</span> <span class="o">-</span> <span class="n">start_time</span>
         
-        <span class="c1"># get the meory usage</span>
-        <span class="n">current</span><span class="p">,</span> <span class="n">peak</span> <span class="o">=</span> <span class="n">tracemalloc</span><span class="o">.</span><span class="n">get_traced_memory</span><span class="p">()</span>
-        <span class="n">tracemalloc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-     
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Function: </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Method: </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;args: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kwargs: </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current memory usage: </span><span class="si">{</span><span class="n">current</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> MB&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Peak memory usage: </span><span class="si">{</span><span class="n">peak</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> MB&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Time elapsed is seconds: </span><span class="si">{</span><span class="n">elapse_time</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> seconds&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="s2">&quot;~&quot;</span><span class="o">*</span><span class="mi">40</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Time elapsed: </span><span class="si">{</span><span class="n">elapse_time</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> seconds&#39;</span><span class="p">)</span>
         
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+  
     <span class="k">return</span> <span class="n">wrapper</span>
 
-
-<span class="nd">@benchmark</span>
+<span class="nd">@benchmark_time</span>
+<span class="nd">@benchmark_memo</span>
+<span class="nd">@print_funk_info</span>
 <span class="k">def</span> <span class="nf">list_convert</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;list(range(num))&#39;&#39;&#39;</span>
 
-    <span class="n">my_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+    <span class="n">list_num</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
 
 
-<span class="nd">@benchmark</span>
+<span class="nd">@benchmark_time</span>
+<span class="nd">@benchmark_memo</span>
+<span class="nd">@print_funk_info</span>
 <span class="k">def</span> <span class="nf">list_compreh</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;[l for l in range(num)]&#39;&#39;&#39;</span>
 
-    <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)]</span>
+    <span class="n">list_num</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)]</span>
 
 
-<span class="nd">@benchmark</span>
+<span class="nd">@benchmark_time</span>
+<span class="nd">@benchmark_memo</span>
+<span class="nd">@print_funk_info</span>
 <span class="k">def</span> <span class="nf">list_append</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;my_list.append(item)&#39;&#39;&#39;</span>
+    <span class="sd">&#39;&#39;&#39;list_num.append(item)&#39;&#39;&#39;</span>
 
-    <span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">list_num</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-        <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="n">list_num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
 
-<span class="nd">@benchmark</span>
+<span class="nd">@benchmark_time</span>
+<span class="nd">@benchmark_memo</span>
+<span class="nd">@print_funk_info</span>
 <span class="k">def</span> <span class="nf">list_concat</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;my_list = my_list + [item]&#39;&#39;&#39;</span>
+    <span class="sd">&#39;&#39;&#39;list_num = list_num + [item]&#39;&#39;&#39;</span>
 
-    <span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">list_num</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-        <span class="n">my_list</span> <span class="o">=</span> <span class="n">my_list</span> <span class="o">+</span> <span class="p">[</span><span class="n">item</span><span class="p">]</span>
-
-<span class="n">list_convert</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">list_compreh</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">list_append</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">list_concat</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">list_num</span> <span class="o">=</span> <span class="n">list_num</span> <span class="o">+</span> <span class="p">[</span><span class="n">item</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_convert</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">list_compreh</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">list_append</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">list_concat</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1083,37 +1135,54 @@ func doc: A function to say hi
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Function: list_convert
 Method: list(range(num))
 args: ()
-kwargs: {&#39;num&#39;: 10000}
-Current memory usage: 0.000424 MB
-Peak memory usage: 0.353416 MB
-Time elapsed is seconds: 0.004722 seconds
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kwargs: {&#39;num&#39;: 100000}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------
+Current memory usage: 0.004948 MB
+Peak memory usage: 3.601196 MB
+----------------------------------------
+Time elapsed: 0.043967 seconds
+----------------------------------------
+
 Function: list_compreh
 Method: [l for l in range(num)]
 args: ()
-kwargs: {&#39;num&#39;: 10000}
-Current memory usage: 0.000848 MB
-Peak memory usage: 0.361404 MB
-Time elapsed is seconds: 0.003910 seconds
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Function: list_append
-Method: my_list.append(item)
-args: ()
-kwargs: {&#39;num&#39;: 10000}
-Current memory usage: 0.000440 MB
-Peak memory usage: 0.360860 MB
-Time elapsed is seconds: 0.004273 seconds
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kwargs: {&#39;num&#39;: 100000}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Function: list_concat
-Method: my_list = my_list + [item]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------
+Current memory usage: 0.002452 MB
+Peak memory usage: 3.619248 MB
+----------------------------------------
+Time elapsed: 0.048212 seconds
+----------------------------------------
+
+Function: list_append
+Method: list_num.append(item)
 args: ()
-kwargs: {&#39;num&#39;: 10000}
-Current memory usage: 0.000905 MB
-Peak memory usage: 0.433765 MB
-Time elapsed is seconds: 0.156729 seconds
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kwargs: {&#39;num&#39;: 100000}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------
+Current memory usage: 0.001721 MB
+Peak memory usage: 3.618381 MB
+----------------------------------------
+Time elapsed: 0.051082 seconds
+----------------------------------------
+
+Function: list_concat
+Method: list_num = list_num + [item]
+args: ()
+kwargs: {&#39;num&#39;: 100000}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------
+Current memory usage: 0.001481 MB
+Peak memory usage: 4.393741 MB
+----------------------------------------
+Time elapsed: 23.461572 seconds
+----------------------------------------
 </pre></div>
 </div>
 </div>
