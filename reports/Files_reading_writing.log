@@ -17,13 +17,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-printInfo(startMsg="~start dict iteration~", endMsg="~end dict iteration~" , "Juret", "Ümit", name="Dilmurat", age=44, profession="Bioinformatician")
+new_dir = '/home/cuyghur/python_books/'
+
+os.chdir(new_dir)
+
+os.listdir(Path.cwd())
 ------------------
 
-[0;36m  Input [0;32mIn [8][0;36m[0m
-[0;31m    printInfo(startMsg="~start dict iteration~", endMsg="~end dict iteration~" , "Juret", "Ümit", name="Dilmurat", age=44, profession="Bioinformatician")[0m
-[0m                                                                                 ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m positional argument follows keyword argument
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Input [0;32mIn [6][0m, in [0;36m<cell line: 3>[0;34m()[0m
+[1;32m      1[0m new_dir [38;5;241m=[39m [38;5;124m'[39m[38;5;124m/home/cuyghur/python_books/[39m[38;5;124m'[39m
+[0;32m----> 3[0m os[38;5;241m.[39mchdir(new_dir)
+[1;32m      5[0m os[38;5;241m.[39mlistdir(Path[38;5;241m.[39mcwd())
 
-SyntaxError: positional argument follows keyword argument (4071587685.py, line 1)
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/home/cuyghur/python_books/'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/cuyghur/python_books/'
 
