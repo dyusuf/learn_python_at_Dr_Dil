@@ -245,9 +245,59 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modifying-a-list-of-files-using-glob-patterns">
-   Modifying a List of Files Using Glob Patterns
+  <a class="reference internal nav-link" href="#find-files-directories-with-a-pattern">
+   Find files/directories with a pattern
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-problem-how-to-find-files-with-a-pattern">
+     A Problem:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       How
+      </span>
+      <span class="pre">
+       to
+      </span>
+      <span class="pre">
+       find
+      </span>
+      <span class="pre">
+       files
+      </span>
+      <span class="pre">
+       with
+      </span>
+      <span class="pre">
+       a
+      </span>
+      <span class="pre">
+       pattern?
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#search-files-using-wildcard-characters">
+     Search Files Using Wildcard Characters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#search-files-in-all-subdirectories">
+     Search files in all subdirectories
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#glob-vs-iglob">
+     glob vs iglob
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#homework">
+     Homework
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -310,9 +360,59 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modifying-a-list-of-files-using-glob-patterns">
-   Modifying a List of Files Using Glob Patterns
+  <a class="reference internal nav-link" href="#find-files-directories-with-a-pattern">
+   Find files/directories with a pattern
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-problem-how-to-find-files-with-a-pattern">
+     A Problem:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       How
+      </span>
+      <span class="pre">
+       to
+      </span>
+      <span class="pre">
+       find
+      </span>
+      <span class="pre">
+       files
+      </span>
+      <span class="pre">
+       with
+      </span>
+      <span class="pre">
+       a
+      </span>
+      <span class="pre">
+       pattern?
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#search-files-using-wildcard-characters">
+     Search Files Using Wildcard Characters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#search-files-in-all-subdirectories">
+     Search files in all subdirectories
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#glob-vs-iglob">
+     glob vs iglob
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#homework">
+     Homework
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -471,11 +571,25 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">cwd</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
 
 <span class="n">cwd</span>
+
+<span class="n">cwd</span><span class="o">/</span><span class="s1">&#39;bla&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/cuyghur/python_books&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/chapters/Files/bla&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;path</span><span class="se">\\</span><span class="s1">bla&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>path\bla
 </pre></div>
 </div>
 </div>
@@ -488,7 +602,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/cuyghur&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/chapters&#39;)
 </pre></div>
 </div>
 </div>
@@ -501,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/cuyghur/python_books&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/chapters/Files&#39;)
 </pre></div>
 </div>
 </div>
@@ -543,6 +657,20 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/home/cuyghur/python_books&#39;</span><span class="p">)</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+<span class="n">cwd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/cuyghur/python_books&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">folder_file</span> <span class="o">=</span> <span class="n">cwd</span><span class="o">/</span><span class="s1">&#39;learn_python_at_dr_dil/learn_python_at_dr_dil/chapters/&#39;</span><span class="o">/</span><span class="s1">&#39;Files&#39;</span>
@@ -554,7 +682,23 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/chapters/Files&#39;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileExistsError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_30747</span><span class="o">/</span><span class="mf">3821635529.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">folder_file</span> <span class="o">=</span> <span class="n">cwd</span><span class="o">/</span><span class="s1">&#39;learn_python_at_dr_dil/learn_python_at_dr_dil/chapters/&#39;</span><span class="o">/</span><span class="s1">&#39;Files&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">folder_file</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">folder_file</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+<span class="nn">~/miniconda3/envs/Python_book/lib/python3.10/os.py</span> in <span class="ni">makedirs</span><span class="nt">(name, mode, exist_ok)</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>             <span class="k">return</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">225</span>         <span class="n">mkdir</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span>         <span class="c1"># Cannot rely on checking for EEXIST, since the operating system</span>
+
+<span class="ne">FileExistsError</span>: [Errno 17] File exists: &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/chapters/Files&#39;
 </pre></div>
 </div>
 </div>
@@ -781,13 +925,12 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Finding File Sizes and Folder Contents<a class="headerlink" href="#finding-file-sizes-and-folder-contents" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cwf</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">/</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">cwf</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.003039
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/cuyghur/python_books&#39;)
 </pre></div>
 </div>
 </div>
@@ -795,6 +938,44 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;python_oeguenish_at_dr_dil&#39;, &#39;learn_python_at_dr_dil&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cwf</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">/</span><span class="s1">&#39;learn_python_at_dr_dil&#39;</span>
+<span class="n">cwf</span> <span class="o">=</span> <span class="n">cwf</span><span class="o">/</span><span class="s1">&#39;requirements.txt&#39;</span>
+<span class="n">cwf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/requirements.txt&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">cwf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;./learn_python_at_dr_dil&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -808,6 +989,78 @@ const thebe_selector_output = ".output, .cell_output"
  &#39;CONTRIBUTING.md&#39;,
  &#39;.ipynb_checkpoints&#39;,
  &#39;learn_python_at_dr_dil&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/cuyghur/python_books&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>os.path.isfile
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> os<span class=" -Color -Color-Blue">.</span>path<span class=" -Color -Color-Blue">.</span>isfile<span class=" -Color -Color-Blue">(</span>path<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span> Test whether a path is a regular file
+<span class=" -Color -Color-Red">File:</span>      ~/miniconda3/envs/Python_book/lib/python3.10/genericpath.py
+<span class=" -Color -Color-Red">Type:</span>      function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/chapters/Files&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;file&#39;</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>     
+        <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;directory&#39;</span>
+        
+    <span class="n">size</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">size</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="si">}</span><span class="s2">M&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>logo.png, file, 0.036302M
+_config.yml, file, 0.001518M
+python_books, directory, 0.004096M
+chapters, directory, 0.004096M
+_build, directory, 0.004096M
+index.ipynb, file, 0.004995M
+.ipynb_checkpoints, directory, 0.004096M
+demo.ipynb, file, 0.02343M
+logo.svg, file, 0.007923M
+_toc.yml, file, 0.00036M
 </pre></div>
 </div>
 </div>
@@ -840,127 +1093,222 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="modifying-a-list-of-files-using-glob-patterns">
-<h2>Modifying a List of Files Using Glob Patterns<a class="headerlink" href="#modifying-a-list-of-files-using-glob-patterns" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="find-files-directories-with-a-pattern">
+<h2>Find files/directories with a pattern<a class="headerlink" href="#find-files-directories-with-a-pattern" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-problem-how-to-find-files-with-a-pattern">
+<h3>A Problem: <code class="docutils literal notranslate"><span class="pre">How</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">files</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">pattern?</span></code><a class="headerlink" href="#a-problem-how-to-find-files-with-a-pattern" title="Permalink to this headline">¶</a></h3>
+<p>An Example:</p>
+<p>At <code class="docutils literal notranslate"><span class="pre">/home/cuyghur/python_books/learn_python_at_dr_dil/</span></code>,</p>
+<p>the content are:</p>
+<ul class="simple">
+<li><p>.git</p></li>
+<li><p>LICENSE</p></li>
+<li><p>requirements.txt</p></li>
+<li><p><a class="reference external" href="http://CONDUCT.md">CONDUCT.md</a></p></li>
+<li><p><a class="reference external" href="http://README.md">README.md</a></p></li>
+<li><p>.github</p></li>
+<li><p><a class="reference external" href="http://CONTRIBUTING.md">CONTRIBUTING.md</a></p></li>
+<li><p>.ipynb_checkpoints</p></li>
+<li><p>learn_python_at_dr_dil</p></li>
+</ul>
+<p>how to find the files with the suffix <code class="docutils literal notranslate"><span class="pre">md</span></code>?</p>
+<p>The solution is following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">glob.glob(pathname)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="n">wd</span> <span class="o">=</span> <span class="s2">&quot;/home/cuyghur/python_books/learn_python_at_dr_dil/&quot;</span>
+
+<span class="n">md_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">wd</span><span class="o">+</span><span class="s1">&#39;/*md&#39;</span><span class="p">)</span>
+
+<span class="n">md_files</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/CONDUCT.md&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/README.md&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/CONTRIBUTING.md&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">md_files</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CONDUCT.md&#39;, &#39;README.md&#39;, &#39;CONTRIBUTING.md&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="search-files-using-wildcard-characters">
+<h3>Search Files Using Wildcard Characters<a class="headerlink" href="#search-files-using-wildcard-characters" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>* : Matches everything 
+*.md -&gt; &#39;CONDUCT.md&#39;, &#39;README.md&#39;, &#39;CONTRIBUTING.md&#39;
+
+? : Matches any single character 
+??????.md -&gt; README.md
+
+[]: Matches any character in the sequence  
+[RDE]*md -&gt; &#39;README.md&#39;
+
+[!]: Matches any character not in sequence 
+[!RDE]*md -&gt; &#39;CONDUCT.md&#39;, &#39;CONTRIBUTING.md&#39;
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">md_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">wd</span><span class="o">+</span><span class="s1">&#39;/??????.md&#39;</span><span class="p">)</span>
+
+<span class="n">md_files</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/README.md&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">md_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">wd</span><span class="o">+</span><span class="s1">&#39;/[RDE]*.md&#39;</span><span class="p">)</span>
+
+<span class="n">md_files</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/README.md&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">md_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">wd</span><span class="o">+</span><span class="s1">&#39;/[!RDE]*.md&#39;</span><span class="p">)</span>
+
+<span class="n">md_files</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/CONDUCT.md&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/CONTRIBUTING.md&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="search-files-in-all-subdirectories">
+<h3>Search files in all subdirectories<a class="headerlink" href="#search-files-in-all-subdirectories" title="Permalink to this headline">¶</a></h3>
+<p>An Example:</p>
+<p>How to recursively find the <code class="docutils literal notranslate"><span class="pre">png</span></code> files of sub-directories at <code class="docutils literal notranslate"><span class="pre">/home/cuyghur/python_books/learn_python_at_dr_dil/</span></code>?</p>
+<p>Solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="n">wd</span> <span class="o">=</span> <span class="s2">&quot;/home/cuyghur/python_books/learn_python_at_dr_dil/&quot;</span>
+<span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">wd</span><span class="o">+</span><span class="s2">&quot;/**/*png&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/logo.png&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/chapters/data_structure/dictionary_concept.png&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build/html/_static/logo.png&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build/html/_static/file.png&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build/html/_static/minus.png&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build/html/_static/plus.png&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build/html/_static/images/logo_colab.png&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build/html/_images/dictionary_concept.png&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build/_page/chapters-Files-Files_reading_writing/html/_static/file.png&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build/_page/chapters-Files-Files_reading_writing/html/_static/minus.png&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build/_page/chapters-Files-Files_reading_writing/html/_static/plus.png&#39;,
+ &#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build/_page/chapters-Files-Files_reading_writing/html/_static/images/logo_colab.png&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="glob-vs-iglob">
+<h3>glob vs iglob<a class="headerlink" href="#glob-vs-iglob" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">glob.iglob()</span></code> works exactly the same as the <code class="docutils literal notranslate"><span class="pre">glob.glob()</span></code>. The advantage of <code class="docutils literal notranslate"><span class="pre">glob.iglob()</span></code> is to save the memory usage since it returns the <code class="docutils literal notranslate"><span class="pre">iterator</span></code> object which will load results in memory when called.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span> 
+
+<span class="n">wd</span> <span class="o">=</span> <span class="s2">&quot;/home/cuyghur/python_books/learn_python_at_dr_dil/&quot;</span>
+<span class="n">files</span><span class="o">=</span>  <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">wd</span><span class="o">+</span><span class="s2">&quot;/**/*&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+
+<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2520
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span> 
+
+<span class="n">wd</span> <span class="o">=</span> <span class="s2">&quot;/home/cuyghur/python_books/learn_python_at_dr_dil/&quot;</span>
+<span class="n">files</span><span class="o">=</span>  <span class="n">glob</span><span class="o">.</span><span class="n">iglob</span><span class="p">(</span><span class="n">wd</span><span class="o">+</span><span class="s2">&quot;/**/*&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+
+<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="homework">
+<h3>Homework<a class="headerlink" href="#homework" title="Permalink to this headline">¶</a></h3>
+<p>Recursively find all files with a pattern (txt, png etc.)  at a given path and sort the files according to the date and time of modification.</p>
+<p>Hint:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/&#39;</span><span class="p">)</span>
-<span class="n">cwd</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+<span class="n">file_stat</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s1">&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/logo.png&#39;</span><span class="p">)</span>
 
-<span class="n">cwd</span>
+<span class="n">file_stat</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>os.stat_result(st_mode=33204, st_ino=14188493, st_dev=66305, st_nlink=1, st_uid=1000, st_gid=1000, st_size=36302, st_atime=1641914073, st_mtime=1641420276, st_ctime=1641420276)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cwd</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span> <span class="c1"># (*) stands for “multiple of any characters</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the date and time of modification</span>
+<span class="n">file_stat</span><span class="o">.</span><span class="n">st_mtime</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object Path.glob at 0x7fd15de34900&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1641420276.1515005
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cwd</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">))</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/logo.png&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_config.yml&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/python_books&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/chapters&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/index.ipynb&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/.ipynb_checkpoints&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/demo.ipynb&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/logo.svg&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_toc.yml&#39;)]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cwd</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*png&#39;</span><span class="p">))</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/logo.png&#39;)]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cwd</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;_*&#39;</span><span class="p">))</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_config.yml&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_build&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_toc.yml&#39;)]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cwd</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;_*yml&#39;</span><span class="p">))</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_config.yml&#39;),
- PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_toc.yml&#39;)]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cwd</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;_???.yml&#39;</span><span class="p">))</span> <span class="c1"># he question mark (?) stands for any single character</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_toc.yml&#39;)]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">totalSize</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">cwd</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*yml&#39;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="n">totalSize</span> <span class="o">=</span> <span class="n">totalSize</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
-<span class="n">totalSize</span>   
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_config.yml
-/home/cuyghur/python_books/learn_python_at_dr_dil/learn_python_at_dr_dil/_toc.yml
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1878
-</pre></div>
 </div>
 </div>
 </div>
