@@ -356,7 +356,9 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Create text file<a class="headerlink" href="#create-text-file" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dir_name</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;/tmp/files&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">dir_name</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;/tmp/files&#39;</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">dir_name</span><span class="p">)</span>
@@ -371,19 +373,12 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="k">except</span><span class="p">:</span>
     <span class="k">pass</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>    
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">testF</span><span class="p">)</span>    
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 16&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">except</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="k">pass</span>
-<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;os&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -498,7 +493,7 @@ The 2nd line.
 <li><p>write the following text to a file</p></li>
 <li><p>read the text from the file</p></li>
 <li><p>calculate the frequencies of the appeard words</p></li>
-<li><p>write the results to a report file with format: word: frequency</p></li>
+<li><p>write the results to a report file with the format – word: frequency</p></li>
 </ol>
 <p>The text:</p>
 <p>Beautiful is better than ugly.
